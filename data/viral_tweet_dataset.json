@@ -1,0 +1,26 @@
+{
+  "dataset": "viral_tweet_dataset",
+  "generated_at": "2026-03-13",
+  "topic_scope": [
+    "technology",
+    "startups",
+    "artificial intelligence",
+    "AI agents",
+    "autonomous systems",
+    "programming and software engineering",
+    "business strategy",
+    "technology news"
+  ],
+  "normalization": {
+    "min_followers": 250,
+    "min_total_engagement": 20,
+    "normalized_engagement_threshold": 0.01,
+    "impressions_weight": 0.02,
+    "recency_half_life_days": 120
+  },
+  "counts": {
+    "candidates": 0,
+    "accepted": 0
+  },
+  "tweets": []
+}

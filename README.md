@@ -12,6 +12,9 @@ This repo seeds the reference account dataset used to drive style extraction for
 - `data/approved_topics.json` stores approved topics that pass the scoring threshold.
 - `data/recent_topics.json` stores recently used topics for deduplication.
 - `data/topic_discovery_config.json` holds the topic discovery configuration.
+- `data/candidate_viral_tweets.json` stores raw candidates before engagement normalization filtering.
+- `data/viral_tweet_dataset.json` stores normalized, labeled, high-performing tweets for training.
+- `data/viral_tweet_config.json` holds the viral tweet dataset configuration.
 
 ## Refreshing data
 
@@ -40,5 +43,25 @@ python scripts/topic_discovery.py
 ```
 
 You can adjust keywords, lookback window, signal thresholds, or scoring weights in `data/topic_discovery_config.json`.
+
+# viral tweet dataset
+
+Build the viral tweet dataset with:
+
+```bash
+python scripts/build_viral_tweet_dataset.py
+```
+
+Set `X_BEARER_TOKEN` first. The script reads `data/reference_accounts.json`, `data/topic_stream.json`, and trending keyword search, writes `data/candidate_viral_tweets.json`, and promotes tweets into `data/viral_tweet_dataset.json` after normalization.
+
+# manual collection
+
+If you want to avoid the API, fill `data/manual_viral_tweets.csv` with tweets you collect manually from the X UI and run:
+
+```bash
+python scripts/build_viral_tweet_dataset_manual.py
+```
+
+Required columns are `text`, `author_followers`, `like_count`, `reply_count`, `retweet_count`, `quote_count`. Optional columns are `tweet_id`, `url`, `created_at`, `author_username`, `author_id`, `impression_count`, `source_type`, `source_query`.
 
 # contentagent

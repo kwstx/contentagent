@@ -1,0 +1,16 @@
+{
+  "dataset": "candidate_viral_tweets",
+  "generated_at": "2026-03-13",
+  "source_summary": {
+    "reference_accounts": 0,
+    "topic_discovery": 0,
+    "trending_search": 0
+  },
+  "normalization": {
+    "min_followers": 250,
+    "min_total_engagement": 20,
+    "normalized_engagement_threshold": 0.01,
+    "impressions_weight": 0.02
+  },
+  "candidates": []
+}
