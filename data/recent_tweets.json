@@ -1,0 +1,61 @@
+{
+  "dataset": "recent_tweets",
+  "updated_at": "2026-03-13T19:13:54+00:00",
+  "tweets": [
+    {
+      "tweet_id": "o-0001",
+      "text": "Most teams blame tools for startup hiring cycles and the layoff reflex, but the friction is coordination, not capability.\nFounders chase headcount optics, then burn rate chases them.\nThe postmortem will say \"process,\" which is how you know nobody fixed it.",
+      "published_at": "2026-03-13T19:13:08+00:00"
+    },
+    {
+      "tweet_id": "o-0011",
+      "text": "Most teams blame tools for contrarian takes on VC-driven startup advice, but the friction is coordination, not capability.\nFounders chase headcount optics, then burn rate chases them.\nThe postmortem will say \"process,\" which is how you know nobody fixed it.",
+      "published_at": "2026-03-13T19:13:08+00:00"
+    },
+    {
+      "tweet_id": "o-0021",
+      "text": "Most teams blame tools for coordination debt in multi-agent AI systems, but the friction is coordination, not capability.\nTeams ship clever agents, then wonder why they drift apart.\nThe postmortem will say \"process,\" which is how you know nobody fixed it.",
+      "published_at": "2026-03-13T19:13:08+00:00"
+    },
+    {
+      "tweet_id": "o-0031",
+      "text": "Most teams blame tools for misconceptions about AI capabilities vs operational reality, but the friction is coordination, not capability.\nInfrastructure refuses to match the slide deck.\nThe postmortem will say \"process,\" which is how you know nobody fixed it.",
+      "published_at": "2026-03-13T19:13:08+00:00"
+    },
+    {
+      "tweet_id": "o-0041",
+      "text": "Most teams blame tools for agent communication platforms as missing infrastructure, but the friction is coordination, not capability.\nTeams ship clever agents, then wonder why they drift.\nThe postmortem will say \"process\" and nothing changes.",
+      "published_at": "2026-03-13T19:13:08+00:00"
+    },
+    {
+      "tweet_id": "o-0001",
+      "text": "Most teams blame tools for startup hiring cycles and the layoff reflex, but the friction is coordination, not capability.\nFounders chase headcount optics, then burn rate chases them.\nThe postmortem will say \"process,\" which is how you know nobody fixed it.",
+      "published_at": "2026-03-13T19:13:54+00:00"
+    },
+    {
+      "tweet_id": "o-0011",
+      "text": "Most teams blame tools for contrarian takes on VC-driven startup advice, but the friction is coordination, not capability.\nFounders chase headcount optics, then burn rate chases them.\nThe postmortem will say \"process,\" which is how you know nobody fixed it.",
+      "published_at": "2026-03-13T19:13:54+00:00"
+    },
+    {
+      "tweet_id": "o-0021",
+      "text": "Most teams blame tools for coordination debt in multi-agent AI systems, but the friction is coordination, not capability.\nTeams ship clever agents, then wonder why they drift apart.\nThe postmortem will say \"process,\" which is how you know nobody fixed it.",
+      "published_at": "2026-03-13T19:13:54+00:00"
+    },
+    {
+      "tweet_id": "o-0031",
+      "text": "Most teams blame tools for misconceptions about AI capabilities vs operational reality, but the friction is coordination, not capability.\nInfrastructure refuses to match the slide deck.\nThe postmortem will say \"process,\" which is how you know nobody fixed it.",
+      "published_at": "2026-03-13T19:13:54+00:00"
+    },
+    {
+      "tweet_id": "o-0041",
+      "text": "Most teams blame tools for agent communication platforms as missing infrastructure, but the friction is coordination, not capability.\nTeams ship clever agents, then wonder why they drift.\nThe postmortem will say \"process\" and nothing changes.",
+      "published_at": "2026-03-13T19:13:54+00:00"
+    },
+    {
+      "tweet_id": "o-0051",
+      "text": "Most teams blame tools for bias and ethical blind spots in AI adoption, but the friction is coordination, not capability.\nInfrastructure refuses to match the slide deck.\nThe postmortem will say \"process,\" which is how you know nobody fixed it.",
+      "published_at": "2026-03-13T19:13:54+00:00"
+    }
+  ]
+}
