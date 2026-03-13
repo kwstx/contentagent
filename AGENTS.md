@@ -150,3 +150,77 @@ Before a topic proceeds to the tweet generation stage, the system must run a fin
 - product relevance rules have been evaluated
 
 Only topics that pass this validation should enter the tweet concept generation stage.
+
+# Tweet Ranking Rules
+
+The purpose of this stage is to assess all generated tweet candidates from Step 9 and rank them based on predicted engagement. The system uses machine learning models and heuristic scoring derived from the `viral_tweet_dataset` and `tweet_patterns` to estimate each tweet’s potential performance. Only top-performing tweets proceed to publication or scheduling.
+
+The output is a dataset called `ranked_tweets`, containing the highest-potential tweets for posting.
+
+## Engagement Prediction Model
+
+The system should implement a predictive model that estimates engagement using features extracted from the candidate tweets:
+
+- Structural features: hook type, argument flow, presence of dark humor, length, punctuation, and line breaks.
+- Topic features: topic domain (tech, AI, startups, programming, business, tech news), topic novelty, and product relevance.
+- Stylistic features: professional tone, controversial framing, opinionated stance, subtle irony.
+- Historical engagement patterns: normalized engagement of similar tweets in the `viral_tweet_dataset`, including reference account performance.
+
+The model outputs a predicted engagement score for each candidate tweet.
+
+## Product-Relevant Scoring
+
+For tweets flagged as product-relevant, the system applies a slight engagement boost if the product is integrated naturally and aligns with the style rules. This ensures:
+
+- The tweet highlights Engram conceptually, without appearing promotional.
+- Product-relevant tweets do not dominate the feed (10–15% frequency limit).
+- Boosted scores only apply when the product mention enhances the insight or argument.
+
+## Topic Alignment Check
+
+The system must verify that each candidate tweet remains within the approved topic scope and adheres to domain-specific structural patterns. Tweets that deviate or attempt to address unapproved topics are penalized or rejected, maintaining a cohesive account identity.
+
+## Style & Tone Compliance
+
+Before a tweet can be ranked, the system must validate that it follows all predefined style constraints:
+
+- ≤280 characters
+- Professional, opinionated, and slightly controversial
+- Optional subtle dark humor
+- No emojis or hashtags
+- Clear, concise, readable sentences
+- Proper hook, insight, and optional twist structure
+
+Tweets violating these constraints are automatically removed or rewritten.
+
+## Diversity and Redundancy Control
+
+To prevent repetitive content, the system must evaluate recently posted tweets (`recent_tweets`) for semantic similarity. Tweets that are too similar to recent posts receive a penalty in the predicted engagement score.
+
+This ensures a diverse content feed and reduces audience fatigue.
+
+## Ranking and Selection
+
+Each validated tweet candidate receives a final engagement score, combining:
+
+- Predicted engagement from the model
+- Product relevance boost (if applicable)
+- Diversity penalty for redundancy
+- Alignment with approved topic and tone
+
+The system then ranks all candidates. The top N tweets (configurable) are selected for posting or scheduling. Multiple variants per concept are retained so that A/B testing and continuous learning can be applied.
+
+## Output Metadata
+
+The `ranked_tweets` dataset must include:
+
+- `tweet_id` → unique identifier
+- `concept_id` → origin concept
+- `topic_id` → approved topic category
+- `predicted_engagement_score` → numeric ranking score
+- `hook_type` → contrarian, curiosity, authoritative
+- `tone_flags` → professional, opinionated, controversial, dark humor
+- `product_mention` → true/false
+- `structural_template` → reference to applied viral pattern
+
+This metadata enables performance tracking, iterative learning, and refinement of the agent’s tweet generation process.

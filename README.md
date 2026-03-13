@@ -74,3 +74,11 @@ Once the viral dataset is populated, extract reusable structure templates with:
 ```bash
 python scripts/build_tweet_patterns.py
 ```
+
+# tweet ranking
+
+Rank generated tweet candidates with:
+
+```bash
+python scripts/rank_tweets.py --top 12
+```
