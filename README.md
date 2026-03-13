@@ -15,6 +15,7 @@ This repo seeds the reference account dataset used to drive style extraction for
 - `data/candidate_viral_tweets.json` stores raw candidates before engagement normalization filtering.
 - `data/viral_tweet_dataset.json` stores normalized, labeled, high-performing tweets for training.
 - `data/viral_tweet_config.json` holds the viral tweet dataset configuration.
+- `data/tweet_patterns.json` stores extracted structural templates for tweet generation.
 
 ## Refreshing data
 
@@ -65,3 +66,11 @@ python scripts/build_viral_tweet_dataset_manual.py
 Required columns are `text`, `author_followers`, `like_count`, `reply_count`, `retweet_count`, `quote_count`. Optional columns are `tweet_id`, `url`, `created_at`, `author_username`, `author_id`, `impression_count`, `source_type`, `source_query`.
 
 # contentagent
+
+# tweet pattern extraction
+
+Once the viral dataset is populated, extract reusable structure templates with:
+
+```bash
+python scripts/build_tweet_patterns.py
+```
