@@ -1,0 +1,79 @@
+{
+  "dataset": "topic_discovery_config",
+  "generated_at": "2026-03-13",
+  "topic_scope": [
+    "technology",
+    "startups",
+    "artificial intelligence",
+    "AI agents",
+    "autonomous systems",
+    "programming and software engineering",
+    "business strategy",
+    "technology news"
+  ],
+  "keywords": [
+    "artificial intelligence",
+    "ai agents",
+    "autonomous systems",
+    "multi agent",
+    "agent coordination",
+    "agent interoperability",
+    "ai tooling",
+    "developer tools",
+    "open source",
+    "startups",
+    "venture capital",
+    "programming",
+    "software engineering",
+    "systems design",
+    "infrastructure",
+    "cloud",
+    "llm",
+    "foundation models",
+    "ai safety",
+    "ai regulation",
+    "tech news",
+    "product strategy"
+  ],
+  "product_keywords": [
+    "agent interoperability",
+    "multi agent",
+    "agent coordination",
+    "agent communication",
+    "agent ecosystem",
+    "autonomous agents",
+    "tooling for agents",
+    "agent infrastructure"
+  ],
+  "search": {
+    "lookback_hours": 24,
+    "max_results_per_request": 50,
+    "keyword_chunk_size": 6
+  },
+  "signals": {
+    "baseline_engagement_rate": 0.001,
+    "high_engagement_multiplier": 2.5,
+    "min_total_engagement": 12,
+    "reply_ratio_threshold": 0.25,
+    "min_reply_count": 6,
+    "contrarian_markers": [
+      "hot take",
+      "unpopular",
+      "overrated",
+      "underrated",
+      "everyone is wrong",
+      "nobody wants",
+      "the real problem",
+      "we keep pretending",
+      "stop saying"
+    ]
+  },
+  "topic_extraction": {
+    "min_keyword_length": 3,
+    "max_keywords": 6,
+    "min_supporting_tweets": 2
+  },
+  "deduplication": {
+    "similarity_threshold": 0.5
+  }
+}
