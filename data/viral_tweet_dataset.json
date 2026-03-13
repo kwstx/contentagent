@@ -1,6 +1,6 @@
 {
   "dataset": "viral_tweet_dataset",
-  "generated_at": "2026-03-13T14:56:12+00:00",
+  "generated_at": "2026-03-13T19:21:43+00:00",
   "topic_scope": [
     "technology",
     "startups",
@@ -20,7 +20,107 @@
   },
   "counts": {
     "candidates": 0,
-    "accepted": 0
+    "accepted": 3
   },
-  "tweets": []
+  "tweets": [
+    {
+      "tweet_id": "o-0011",
+      "text": "Most teams blame tools for contrarian takes on VC-driven startup advice, but the friction is coordination, not capability.\nFounders chase headcount optics, then burn rate chases them.\nThe postmortem will say \"process,\" which is how you know nobody fixed it.",
+      "created_at": "2026-03-13T19:13:54+00:00",
+      "public_metrics": {
+        "like_count": 35,
+        "reply_count": 3,
+        "retweet_count": 5,
+        "impression_count": 1052
+      },
+      "engagement_total": 43,
+      "normalized_engagement": 0.046,
+      "source_type": "published_feedback",
+      "topic": {
+        "label": "startups",
+        "keywords": [
+          "most",
+          "teams",
+          "blame",
+          "tools",
+          "contrarian",
+          "takes",
+          "driven",
+          "startup"
+        ]
+      },
+      "product_context": {
+        "relevant": false,
+        "matched_keywords": []
+      },
+      "passes_threshold": true,
+      "collected_at": "2026-03-13T19:21:43+00:00"
+    },
+    {
+      "tweet_id": "o-0021",
+      "text": "Most teams blame tools for coordination debt in multi-agent AI systems, but the friction is coordination, not capability.\nTeams ship clever agents, then wonder why they drift apart.\nThe postmortem will say \"process,\" which is how you know nobody fixed it.",
+      "created_at": "2026-03-13T19:13:54+00:00",
+      "public_metrics": {
+        "like_count": 30,
+        "reply_count": 2,
+        "retweet_count": 5,
+        "impression_count": 988
+      },
+      "engagement_total": 37,
+      "normalized_engagement": 0.044000000000000004,
+      "source_type": "published_feedback",
+      "topic": {
+        "label": "AI agents",
+        "keywords": [
+          "teams",
+          "coordination",
+          "most",
+          "blame",
+          "tools",
+          "debt",
+          "multi",
+          "agent"
+        ]
+      },
+      "product_context": {
+        "relevant": false,
+        "matched_keywords": []
+      },
+      "passes_threshold": true,
+      "collected_at": "2026-03-13T19:21:43+00:00"
+    },
+    {
+      "tweet_id": "o-0041",
+      "text": "Most teams blame tools for agent communication platforms as missing infrastructure, but the friction is coordination, not capability.\nTeams ship clever agents, then wonder why they drift.\nThe postmortem will say \"process\" and nothing changes.",
+      "created_at": "2026-03-13T19:13:54+00:00",
+      "public_metrics": {
+        "like_count": 59,
+        "reply_count": 10,
+        "retweet_count": 10,
+        "impression_count": 1823
+      },
+      "engagement_total": 79,
+      "normalized_engagement": 0.0412,
+      "source_type": "published_feedback",
+      "topic": {
+        "label": "AI agents",
+        "keywords": [
+          "teams",
+          "most",
+          "blame",
+          "tools",
+          "agent",
+          "communication",
+          "platforms",
+          "missing"
+        ]
+      },
+      "product_context": {
+        "relevant": false,
+        "matched_keywords": []
+      },
+      "passes_threshold": true,
+      "collected_at": "2026-03-13T19:21:43+00:00"
+    }
+  ]
 }

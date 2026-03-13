@@ -1,6 +1,6 @@
 {
   "dataset": "approved_topics",
-  "generated_at": "2026-03-13T15:11:14+00:00",
+  "generated_at": "2026-03-13T19:21:43+00:00",
   "topics": [
     {
       "topic_id": "t-001",
@@ -18,19 +18,22 @@
       "signals": [],
       "scores": {
         "domain_relevance": 92.0,
-        "engagement": 66.0,
+        "engagement": 58.08,
         "controversy": 74.0,
         "dark_humor": 34.0,
         "novelty": 80.0,
         "product_relevance": 0.0
       },
       "score_meta": {
-        "base_score": 74.5,
-        "final_score": 74.5,
+        "base_score": 69.72,
+        "final_score": 69.72,
         "product_boost": 0.0,
         "max_similarity": 0.0,
         "redundancy_penalty": 0.0,
-        "engagement_stats": {}
+        "engagement_stats": {
+          "actual_avg": 1.98,
+          "sample_count": 1
+        }
       }
     },
     {
@@ -49,19 +52,22 @@
       "signals": [],
       "scores": {
         "domain_relevance": 90.0,
-        "engagement": 62.0,
+        "engagement": 56.42,
         "controversy": 76.0,
         "dark_humor": 38.0,
         "novelty": 78.0,
         "product_relevance": 0.0
       },
       "score_meta": {
-        "base_score": 73.2,
-        "final_score": 73.2,
+        "base_score": 69.31,
+        "final_score": 69.31,
         "product_boost": 0.0,
         "max_similarity": 0.0,
         "redundancy_penalty": 0.0,
-        "engagement_stats": {}
+        "engagement_stats": {
+          "actual_avg": 2.17,
+          "sample_count": 1
+        }
       }
     },
     {
@@ -80,19 +86,22 @@
       "signals": [],
       "scores": {
         "domain_relevance": 94.0,
-        "engagement": 70.0,
+        "engagement": 75.4,
         "controversy": 78.0,
         "dark_humor": 35.0,
         "novelty": 82.0,
         "product_relevance": 100.0
       },
       "score_meta": {
-        "base_score": 79.8,
-        "final_score": 84.8,
+        "base_score": 75.7,
+        "final_score": 80.7,
         "product_boost": 5.0,
         "max_similarity": 0.0,
         "redundancy_penalty": 0.0,
-        "engagement_stats": {}
+        "engagement_stats": {
+          "actual_avg": 4.4,
+          "sample_count": 1
+        }
       }
     },
     {
@@ -204,19 +213,22 @@
       "signals": [],
       "scores": {
         "domain_relevance": 88.0,
-        "engagement": 64.0,
+        "engagement": 55.72,
         "controversy": 70.0,
         "dark_humor": 52.0,
         "novelty": 77.0,
         "product_relevance": 0.0
       },
       "score_meta": {
-        "base_score": 73.9,
-        "final_score": 73.9,
+        "base_score": 69.63,
+        "final_score": 69.63,
         "product_boost": 0.0,
         "max_similarity": 0.0,
         "redundancy_penalty": 0.0,
-        "engagement_stats": {}
+        "engagement_stats": {
+          "actual_avg": 1.82,
+          "sample_count": 1
+        }
       }
     },
     {
@@ -235,19 +247,22 @@
       "signals": [],
       "scores": {
         "domain_relevance": 86.0,
-        "engagement": 60.0,
+        "engagement": 69.6,
         "controversy": 74.0,
         "dark_humor": 36.0,
         "novelty": 75.0,
         "product_relevance": 0.0
       },
       "score_meta": {
-        "base_score": 70.9,
-        "final_score": 70.9,
+        "base_score": 70.4,
+        "final_score": 70.4,
         "product_boost": 0.0,
         "max_similarity": 0.0,
         "redundancy_penalty": 0.0,
-        "engagement_stats": {}
+        "engagement_stats": {
+          "actual_avg": 4.6,
+          "sample_count": 1
+        }
       }
     },
     {
@@ -452,19 +467,22 @@
       "signals": [],
       "scores": {
         "domain_relevance": 93.0,
-        "engagement": 66.0,
+        "engagement": 70.92,
         "controversy": 70.0,
         "dark_humor": 34.0,
         "novelty": 80.0,
         "product_relevance": 100.0
       },
       "score_meta": {
-        "base_score": 76.6,
-        "final_score": 81.6,
+        "base_score": 72.58,
+        "final_score": 77.58,
         "product_boost": 5.0,
         "max_similarity": 0.0,
         "redundancy_penalty": 0.0,
-        "engagement_stats": {}
+        "engagement_stats": {
+          "actual_avg": 4.12,
+          "sample_count": 1
+        }
       }
     },
     {
