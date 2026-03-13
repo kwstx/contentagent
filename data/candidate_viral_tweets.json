@@ -1,10 +1,8 @@
 {
   "dataset": "candidate_viral_tweets",
-  "generated_at": "2026-03-13",
+  "generated_at": "2026-03-13T14:56:12+00:00",
   "source_summary": {
-    "reference_accounts": 0,
-    "topic_discovery": 0,
-    "trending_search": 0
+    "manual_collection": 0
   },
   "normalization": {
     "min_followers": 250,

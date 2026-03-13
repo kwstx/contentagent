@@ -1,14 +1,11 @@
 import argparse
+import csv
 import json
 import os
 import re
-import sys
-import urllib.parse
-import urllib.request
-from datetime import datetime, timedelta, timezone
+from datetime import datetime, timezone
 
 
-API_BASE = "https://api.x.com/2"
 STOPWORDS = {
     "a",
     "an",
@@ -59,21 +56,10 @@ def utc_now_iso():
 def parse_iso(value):
     if not value:
         return None
-    return datetime.fromisoformat(value.replace("Z", "+00:00"))
-
-
-def api_get(path, params=None, token=None):
-    if token is None:
-        token = os.environ.get("X_BEARER_TOKEN")
-    if not token:
-        raise RuntimeError("Missing X_BEARER_TOKEN environment variable.")
-    query = ""
-    if params:
-        query = "?" + urllib.parse.urlencode(params)
-    url = f"{API_BASE}{path}{query}"
-    req = urllib.request.Request(url, headers={"Authorization": f"Bearer {token}"})
-    with urllib.request.urlopen(req) as resp:
-        return json.load(resp)
+    try:
+        return datetime.fromisoformat(value.replace("Z", "+00:00"))
+    except ValueError:
+        return None
 
 
 def load_json(path):
@@ -169,7 +155,7 @@ def extract_punctuation(text):
         "exclamation": text.count("!"),
         "colon": text.count(":"),
         "semicolon": text.count(";"),
-        "dash": text.count("-") + text.count("–") + text.count("—"),
+        "dash": text.count("-") + text.count("β€“") + text.count("β€”"),
     }
 
 
@@ -261,84 +247,45 @@ def compute_recency_weight(created_at, half_life_days):
     return max(0.1, min(1.0, decay))
 
 
-def load_reference_accounts(path):
-    data = load_json(path)
-    accounts = {}
-    for account in data.get("accounts", []):
-        username = account.get("username")
-        if username:
-            accounts[username.lower()] = account
-    return accounts
+def read_int(value):
+    if value is None:
+        return None
+    value = value.strip()
+    if not value:
+        return None
+    try:
+        return int(value)
+    except ValueError:
+        return None
 
 
-def get_user_id(username, token=None):
-    data = api_get(f"/users/by/username/{username}", token=token)
-    return data.get("data", {}).get("id")
-
-
-def get_recent_tweets(user_id, max_results, token=None):
-    params = {
-        "max_results": max_results,
-        "exclude": "retweets,replies",
-        "tweet.fields": "created_at,public_metrics",
-    }
-    data = api_get(f"/users/{user_id}/tweets", params=params, token=token)
-    return data.get("data", [])
-
-
-def search_recent_tweets(query, start_time, max_results, token=None):
-    params = {
-        "query": query,
-        "start_time": start_time,
-        "max_results": max_results,
-        "tweet.fields": "created_at,public_metrics",
-        "expansions": "author_id",
-        "user.fields": "username,public_metrics",
-    }
-    data = api_get("/tweets/search/recent", params=params, token=token)
-    tweets = data.get("data", [])
-    users = {user["id"]: user for user in data.get("includes", {}).get("users", [])}
-    return tweets, users
-
-
-def build_candidate(tweet, source_type, source_query, author_username, author_followers):
-    return {
-        "tweet_id": tweet.get("id"),
-        "author_username": author_username,
-        "author_id": tweet.get("author_id"),
-        "author_followers": author_followers,
-        "source_type": source_type,
-        "source_query": source_query,
-        "created_at": tweet.get("created_at"),
-        "text": tweet.get("text"),
-        "public_metrics": tweet.get("public_metrics", {}),
-        "url": f"https://x.com/{author_username}/status/{tweet.get('id')}"
-        if author_username
-        else None,
-    }
+def load_manual_csv(path):
+    rows = []
+    with open(path, "r", encoding="utf-8") as handle:
+        reader = csv.DictReader(handle)
+        for row in reader:
+            rows.append(row)
+    return rows
 
 
 def main():
-    parser = argparse.ArgumentParser(description="Build viral tweet dataset from X sources.")
+    parser = argparse.ArgumentParser(
+        description="Build viral tweet dataset from manual CSV input."
+    )
     parser.add_argument(
         "--config",
         default=os.path.join("data", "viral_tweet_config.json"),
         help="Path to viral_tweet_config.json",
     )
     parser.add_argument(
-        "--accounts",
-        default=os.path.join("data", "reference_accounts.json"),
-        help="Path to reference_accounts.json",
-    )
-    parser.add_argument(
-        "--topic-stream",
-        default=os.path.join("data", "topic_stream.json"),
-        help="Path to topic_stream.json",
-    )
-    parser.add_argument(
         "--topic-config",
         default=os.path.join("data", "topic_discovery_config.json"),
         help="Path to topic_discovery_config.json",
+    )
+    parser.add_argument(
+        "--input",
+        default=os.path.join("data", "manual_viral_tweets.csv"),
+        help="Path to manual_viral_tweets.csv",
     )
     parser.add_argument(
         "--candidates-out",
@@ -350,7 +297,6 @@ def main():
         default=os.path.join("data", "viral_tweet_dataset.json"),
         help="Output path for viral_tweet_dataset.json",
     )
-    parser.add_argument("--max-results", type=int, default=None, help="Override max results")
     parser.add_argument("--no-append", action="store_true", help="Do not append to existing dataset")
     args = parser.parse_args()
 
@@ -373,103 +319,36 @@ def main():
     impressions_weight = normalization_cfg.get("impressions_weight", 0.02)
     half_life_days = normalization_cfg.get("recency_half_life_days", 120)
 
-    search_cfg = config.get("search", {})
-    max_results = args.max_results or search_cfg.get("max_results_per_request", 50)
-    lookback_hours = search_cfg.get("lookback_hours", 24)
-    keyword_chunk_size = search_cfg.get("keyword_chunk_size", 6)
-    trending_keywords = search_cfg.get("trending_keywords", [])
-
-    token = os.environ.get("X_BEARER_TOKEN")
-    if not token:
-        print("Error: X_BEARER_TOKEN is required to call the X API.", file=sys.stderr)
-        sys.exit(1)
-
-    fetched_at = utc_now_iso()
-    now = datetime.now(timezone.utc)
-    start_time = (now - timedelta(hours=lookback_hours)).replace(microsecond=0).isoformat()
-
-    accounts = load_reference_accounts(args.accounts)
-    candidates = []
-    source_counts = {"reference_accounts": 0, "topic_discovery": 0, "trending_search": 0}
-
-    for username, account in accounts.items():
-        user_id = get_user_id(username, token=token)
-        if not user_id:
-            continue
-        tweets = get_recent_tweets(user_id, max_results, token=token)
-        for tweet in tweets:
-            candidate = build_candidate(
-                tweet,
-                "reference_account",
-                username,
-                username,
-                account.get("follower_count"),
-            )
-            candidates.append(candidate)
-            source_counts["reference_accounts"] += 1
-
-    if os.path.exists(args.topic_stream):
-        stream_data = load_json(args.topic_stream)
-        for tweet in stream_data.get("tweets", []):
-            candidate = {
-                "tweet_id": tweet.get("tweet_id"),
-                "author_username": tweet.get("author_username"),
-                "author_id": tweet.get("author_id"),
-                "author_followers": tweet.get("author_followers"),
-                "source_type": "topic_discovery",
-                "source_query": tweet.get("source_query"),
-                "created_at": tweet.get("created_at"),
-                "text": tweet.get("text"),
-                "public_metrics": tweet.get("public_metrics", {}),
-                "url": tweet.get("url"),
-            }
-            candidates.append(candidate)
-            source_counts["topic_discovery"] += 1
-
-    if trending_keywords:
-        for idx in range(0, len(trending_keywords), keyword_chunk_size):
-            chunk = trending_keywords[idx : idx + keyword_chunk_size]
-            query = " OR ".join(f'"{term}"' if " " in term else term for term in chunk)
-            tweets, users = search_recent_tweets(query, start_time, max_results, token=token)
-            for tweet in tweets:
-                user = users.get(tweet.get("author_id"), {})
-                username = user.get("username")
-                followers = user.get("public_metrics", {}).get("followers_count")
-                candidate = build_candidate(
-                    tweet,
-                    "trending_search",
-                    query,
-                    username,
-                    followers,
-                )
-                candidates.append(candidate)
-                source_counts["trending_search"] += 1
-
-    seen = set()
-    deduped = []
-    for candidate in candidates:
-        tweet_id = candidate.get("tweet_id")
-        if not tweet_id or tweet_id in seen:
-            continue
-        seen.add(tweet_id)
-        deduped.append(candidate)
-
     min_keyword_length = config.get("feature_extraction", {}).get("min_keyword_length", 3)
     max_keywords = config.get("feature_extraction", {}).get("max_keywords", 8)
+
+    fetched_at = utc_now_iso()
+    rows = load_manual_csv(args.input)
 
     candidate_rows = []
     viral_rows = []
 
-    for tweet in deduped:
-        text = tweet.get("text") or ""
-        metrics = tweet.get("public_metrics", {})
-        followers = tweet.get("author_followers")
+    for row in rows:
+        text = (row.get("text") or "").strip()
+        if not text:
+            continue
+
+        metrics = {
+            "like_count": read_int(row.get("like_count")) or 0,
+            "reply_count": read_int(row.get("reply_count")) or 0,
+            "retweet_count": read_int(row.get("retweet_count")) or 0,
+            "quote_count": read_int(row.get("quote_count")) or 0,
+        }
+        impression_count = read_int(row.get("impression_count"))
+        if impression_count is not None:
+            metrics["impression_count"] = impression_count
+
+        followers = read_int(row.get("author_followers"))
         engagement_total = compute_engagement(metrics)
         normalized = compute_normalized_engagement(metrics, followers, impressions_weight)
 
         keywords = extract_keywords(text, min_keyword_length, max_keywords)
         domain = classify_domain(keywords, topic_scope)
-
         if not domain:
             continue
 
@@ -485,43 +364,45 @@ def main():
         style = build_style_labels(text, contrarian_markers, dark_humor_keywords)
         product_relevant, product_matches = detect_product_relevance(text, product_keywords)
 
-        row = {
-            "tweet_id": tweet.get("tweet_id"),
+        record = {
+            "tweet_id": row.get("tweet_id") or None,
             "text": text,
-            "created_at": tweet.get("created_at"),
-            "url": tweet.get("url"),
-            "author_username": tweet.get("author_username"),
-            "author_id": tweet.get("author_id"),
+            "created_at": row.get("created_at") or None,
+            "url": row.get("url") or None,
+            "author_username": row.get("author_username") or None,
+            "author_id": row.get("author_id") or None,
             "author_followers": followers,
             "public_metrics": metrics,
             "engagement_total": engagement_total,
             "normalized_engagement": normalized,
-            "source_type": tweet.get("source_type"),
-            "source_query": tweet.get("source_query"),
+            "source_type": row.get("source_type") or "manual",
+            "source_query": row.get("source_query") or "manual_collection",
             "topic": {"label": domain, "keywords": keywords[:6]},
             "features": features,
             "style": style,
             "product_context": {"relevant": product_relevant, "matched_keywords": product_matches},
-            "recency_weight": compute_recency_weight(tweet.get("created_at"), half_life_days),
+            "recency_weight": compute_recency_weight(row.get("created_at"), half_life_days),
             "collected_at": fetched_at,
             "passes_threshold": passes_threshold,
         }
 
-        candidate_rows.append(row)
+        candidate_rows.append(record)
         if passes_threshold:
-            viral_rows.append(row)
+            viral_rows.append(record)
 
     if not args.no_append and os.path.exists(args.dataset_out):
         existing = load_json(args.dataset_out)
-        existing_rows = {row.get("tweet_id"): row for row in existing.get("tweets", [])}
+        existing_rows = {row.get("tweet_id") or row.get("url"): row for row in existing.get("tweets", [])}
         for row in viral_rows:
-            existing_rows[row.get("tweet_id")] = row
+            key = row.get("tweet_id") or row.get("url")
+            if key:
+                existing_rows[key] = row
         viral_rows = list(existing_rows.values())
 
     candidate_payload = {
         "dataset": "candidate_viral_tweets",
         "generated_at": fetched_at,
-        "source_summary": source_counts,
+        "source_summary": {"manual_collection": len(candidate_rows)},
         "normalization": {
             "min_followers": min_followers,
             "min_total_engagement": min_total_engagement,

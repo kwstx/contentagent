@@ -47,20 +47,20 @@ You can adjust keywords, lookback window, signal thresholds, or scoring weights 
 
 # viral tweet dataset
 
-Build the viral tweet dataset with:
+Build the viral tweet dataset from manual CSV input with:
 
 ```bash
 python scripts/build_viral_tweet_dataset.py
 ```
 
-Set `X_BEARER_TOKEN` first. The script reads `data/reference_accounts.json`, `data/topic_stream.json`, and trending keyword search, writes `data/candidate_viral_tweets.json`, and promotes tweets into `data/viral_tweet_dataset.json` after normalization.
+The script reads `data/manual_viral_tweets.csv`, writes `data/candidate_viral_tweets.json`, and promotes tweets into `data/viral_tweet_dataset.json` after normalization.
 
 # manual collection
 
-If you want to avoid the API, fill `data/manual_viral_tweets.csv` with tweets you collect manually from the X UI and run:
+Fill `data/manual_viral_tweets.csv` with tweets you collect manually from the X UI and run:
 
 ```bash
-python scripts/build_viral_tweet_dataset_manual.py
+python scripts/build_viral_tweet_dataset.py
 ```
 
 Required columns are `text`, `author_followers`, `like_count`, `reply_count`, `retweet_count`, `quote_count`. Optional columns are `tweet_id`, `url`, `created_at`, `author_username`, `author_id`, `impression_count`, `source_type`, `source_query`.

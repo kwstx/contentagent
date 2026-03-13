@@ -1,0 +1,502 @@
+{
+  "dataset": "approved_topics",
+  "generated_at": "2026-03-13T15:11:14+00:00",
+  "topics": [
+    {
+      "topic_id": "t-001",
+      "topic_description": "misconceptions about AI capabilities vs operational reality",
+      "domain": "artificial intelligence",
+      "product_relevant": false,
+      "keywords": [
+        "ai",
+        "capabilities",
+        "misconceptions",
+        "model",
+        "limits"
+      ],
+      "supporting_tweets": [],
+      "signals": [],
+      "scores": {
+        "domain_relevance": 92.0,
+        "engagement": 66.0,
+        "controversy": 74.0,
+        "dark_humor": 34.0,
+        "novelty": 80.0,
+        "product_relevance": 0.0
+      },
+      "score_meta": {
+        "base_score": 74.5,
+        "final_score": 74.5,
+        "product_boost": 0.0,
+        "max_similarity": 0.0,
+        "redundancy_penalty": 0.0,
+        "engagement_stats": {}
+      }
+    },
+    {
+      "topic_id": "t-002",
+      "topic_description": "bias and ethical blind spots in AI adoption",
+      "domain": "artificial intelligence",
+      "product_relevant": false,
+      "keywords": [
+        "ai",
+        "bias",
+        "ethics",
+        "adoption",
+        "risk"
+      ],
+      "supporting_tweets": [],
+      "signals": [],
+      "scores": {
+        "domain_relevance": 90.0,
+        "engagement": 62.0,
+        "controversy": 76.0,
+        "dark_humor": 38.0,
+        "novelty": 78.0,
+        "product_relevance": 0.0
+      },
+      "score_meta": {
+        "base_score": 73.2,
+        "final_score": 73.2,
+        "product_boost": 0.0,
+        "max_similarity": 0.0,
+        "redundancy_penalty": 0.0,
+        "engagement_stats": {}
+      }
+    },
+    {
+      "topic_id": "t-003",
+      "topic_description": "coordination debt in multi-agent AI systems",
+      "domain": "AI agents",
+      "product_relevant": true,
+      "keywords": [
+        "agents",
+        "coordination",
+        "multi",
+        "autonomous",
+        "interoperability"
+      ],
+      "supporting_tweets": [],
+      "signals": [],
+      "scores": {
+        "domain_relevance": 94.0,
+        "engagement": 70.0,
+        "controversy": 78.0,
+        "dark_humor": 35.0,
+        "novelty": 82.0,
+        "product_relevance": 100.0
+      },
+      "score_meta": {
+        "base_score": 79.8,
+        "final_score": 84.8,
+        "product_boost": 5.0,
+        "max_similarity": 0.0,
+        "redundancy_penalty": 0.0,
+        "engagement_stats": {}
+      }
+    },
+    {
+      "topic_id": "t-004",
+      "topic_description": "autonomous system failures and the lessons teams ignore",
+      "domain": "autonomous systems",
+      "product_relevant": false,
+      "keywords": [
+        "autonomous",
+        "systems",
+        "failure",
+        "lessons",
+        "control"
+      ],
+      "supporting_tweets": [],
+      "signals": [],
+      "scores": {
+        "domain_relevance": 88.0,
+        "engagement": 61.0,
+        "controversy": 72.0,
+        "dark_humor": 42.0,
+        "novelty": 76.0,
+        "product_relevance": 0.0
+      },
+      "score_meta": {
+        "base_score": 71.6,
+        "final_score": 71.6,
+        "product_boost": 0.0,
+        "max_similarity": 0.0,
+        "redundancy_penalty": 0.0,
+        "engagement_stats": {}
+      }
+    },
+    {
+      "topic_id": "t-005",
+      "topic_description": "open-source vs proprietary tooling in modern stacks",
+      "domain": "technology",
+      "product_relevant": false,
+      "keywords": [
+        "open",
+        "source",
+        "proprietary",
+        "tools",
+        "platform"
+      ],
+      "supporting_tweets": [],
+      "signals": [],
+      "scores": {
+        "domain_relevance": 86.0,
+        "engagement": 58.0,
+        "controversy": 68.0,
+        "dark_humor": 30.0,
+        "novelty": 72.0,
+        "product_relevance": 0.0
+      },
+      "score_meta": {
+        "base_score": 68.7,
+        "final_score": 68.7,
+        "product_boost": 0.0,
+        "max_similarity": 0.0,
+        "redundancy_penalty": 0.0,
+        "engagement_stats": {}
+      }
+    },
+    {
+      "topic_id": "t-006",
+      "topic_description": "cloud vs edge tradeoffs hiding inside AI roadmaps",
+      "domain": "technology",
+      "product_relevant": false,
+      "keywords": [
+        "cloud",
+        "edge",
+        "ai",
+        "infrastructure",
+        "tradeoffs"
+      ],
+      "supporting_tweets": [],
+      "signals": [],
+      "scores": {
+        "domain_relevance": 88.0,
+        "engagement": 57.0,
+        "controversy": 66.0,
+        "dark_humor": 28.0,
+        "novelty": 71.0,
+        "product_relevance": 0.0
+      },
+      "score_meta": {
+        "base_score": 67.5,
+        "final_score": 67.5,
+        "product_boost": 0.0,
+        "max_similarity": 0.0,
+        "redundancy_penalty": 0.0,
+        "engagement_stats": {}
+      }
+    },
+    {
+      "topic_id": "t-007",
+      "topic_description": "startup hiring cycles and the layoff reflex",
+      "domain": "startups",
+      "product_relevant": false,
+      "keywords": [
+        "startup",
+        "founder",
+        "hiring",
+        "burn",
+        "layoffs"
+      ],
+      "supporting_tweets": [],
+      "signals": [],
+      "scores": {
+        "domain_relevance": 88.0,
+        "engagement": 64.0,
+        "controversy": 70.0,
+        "dark_humor": 52.0,
+        "novelty": 77.0,
+        "product_relevance": 0.0
+      },
+      "score_meta": {
+        "base_score": 73.9,
+        "final_score": 73.9,
+        "product_boost": 0.0,
+        "max_similarity": 0.0,
+        "redundancy_penalty": 0.0,
+        "engagement_stats": {}
+      }
+    },
+    {
+      "topic_id": "t-008",
+      "topic_description": "contrarian takes on VC-driven startup advice",
+      "domain": "startups",
+      "product_relevant": false,
+      "keywords": [
+        "startup",
+        "vc",
+        "advice",
+        "myths",
+        "funding"
+      ],
+      "supporting_tweets": [],
+      "signals": [],
+      "scores": {
+        "domain_relevance": 86.0,
+        "engagement": 60.0,
+        "controversy": 74.0,
+        "dark_humor": 36.0,
+        "novelty": 75.0,
+        "product_relevance": 0.0
+      },
+      "score_meta": {
+        "base_score": 70.9,
+        "final_score": 70.9,
+        "product_boost": 0.0,
+        "max_similarity": 0.0,
+        "redundancy_penalty": 0.0,
+        "engagement_stats": {}
+      }
+    },
+    {
+      "topic_id": "t-009",
+      "topic_description": "strategic missteps when scaling tech products",
+      "domain": "business strategy",
+      "product_relevant": false,
+      "keywords": [
+        "strategy",
+        "scaling",
+        "product",
+        "growth",
+        "missteps"
+      ],
+      "supporting_tweets": [],
+      "signals": [],
+      "scores": {
+        "domain_relevance": 86.0,
+        "engagement": 58.0,
+        "controversy": 63.0,
+        "dark_humor": 30.0,
+        "novelty": 72.0,
+        "product_relevance": 0.0
+      },
+      "score_meta": {
+        "base_score": 67.9,
+        "final_score": 67.9,
+        "product_boost": 0.0,
+        "max_similarity": 0.0,
+        "redundancy_penalty": 0.0,
+        "engagement_stats": {}
+      }
+    },
+    {
+      "topic_id": "t-010",
+      "topic_description": "productivity myths inside software companies",
+      "domain": "business strategy",
+      "product_relevant": false,
+      "keywords": [
+        "productivity",
+        "myths",
+        "software",
+        "teams",
+        "strategy"
+      ],
+      "supporting_tweets": [],
+      "signals": [],
+      "scores": {
+        "domain_relevance": 84.0,
+        "engagement": 56.0,
+        "controversy": 65.0,
+        "dark_humor": 34.0,
+        "novelty": 70.0,
+        "product_relevance": 0.0
+      },
+      "score_meta": {
+        "base_score": 66.9,
+        "final_score": 66.9,
+        "product_boost": 0.0,
+        "max_similarity": 0.0,
+        "redundancy_penalty": 0.0,
+        "engagement_stats": {}
+      }
+    },
+    {
+      "topic_id": "t-011",
+      "topic_description": "inefficiencies in modern programming practices",
+      "domain": "programming and software engineering",
+      "product_relevant": false,
+      "keywords": [
+        "programming",
+        "inefficiencies",
+        "practice",
+        "code",
+        "tooling"
+      ],
+      "supporting_tweets": [],
+      "signals": [],
+      "scores": {
+        "domain_relevance": 88.0,
+        "engagement": 60.0,
+        "controversy": 64.0,
+        "dark_humor": 32.0,
+        "novelty": 73.0,
+        "product_relevance": 0.0
+      },
+      "score_meta": {
+        "base_score": 69.6,
+        "final_score": 69.6,
+        "product_boost": 0.0,
+        "max_similarity": 0.0,
+        "redundancy_penalty": 0.0,
+        "engagement_stats": {}
+      }
+    },
+    {
+      "topic_id": "t-012",
+      "topic_description": "automation of coding with AI and its hidden costs",
+      "domain": "programming and software engineering",
+      "product_relevant": false,
+      "keywords": [
+        "automation",
+        "coding",
+        "ai",
+        "costs",
+        "tools"
+      ],
+      "supporting_tweets": [],
+      "signals": [],
+      "scores": {
+        "domain_relevance": 90.0,
+        "engagement": 62.0,
+        "controversy": 71.0,
+        "dark_humor": 36.0,
+        "novelty": 74.0,
+        "product_relevance": 0.0
+      },
+      "score_meta": {
+        "base_score": 71.7,
+        "final_score": 71.7,
+        "product_boost": 0.0,
+        "max_similarity": 0.0,
+        "redundancy_penalty": 0.0,
+        "engagement_stats": {}
+      }
+    },
+    {
+      "topic_id": "t-013",
+      "topic_description": "skeptical takes on big tech announcements",
+      "domain": "technology news",
+      "product_relevant": false,
+      "keywords": [
+        "tech",
+        "announcements",
+        "hype",
+        "news",
+        "pr"
+      ],
+      "supporting_tweets": [],
+      "signals": [],
+      "scores": {
+        "domain_relevance": 86.0,
+        "engagement": 58.0,
+        "controversy": 72.0,
+        "dark_humor": 40.0,
+        "novelty": 72.0,
+        "product_relevance": 0.0
+      },
+      "score_meta": {
+        "base_score": 69.6,
+        "final_score": 69.6,
+        "product_boost": 0.0,
+        "max_similarity": 0.0,
+        "redundancy_penalty": 0.0,
+        "engagement_stats": {}
+      }
+    },
+    {
+      "topic_id": "t-014",
+      "topic_description": "AI regulation theater and compliance optics",
+      "domain": "technology news",
+      "product_relevant": false,
+      "keywords": [
+        "ai",
+        "regulation",
+        "compliance",
+        "theater",
+        "policy"
+      ],
+      "supporting_tweets": [],
+      "signals": [],
+      "scores": {
+        "domain_relevance": 88.0,
+        "engagement": 58.0,
+        "controversy": 78.0,
+        "dark_humor": 40.0,
+        "novelty": 72.0,
+        "product_relevance": 0.0
+      },
+      "score_meta": {
+        "base_score": 71.0,
+        "final_score": 71.0,
+        "product_boost": 0.0,
+        "max_similarity": 0.0,
+        "redundancy_penalty": 0.0,
+        "engagement_stats": {}
+      }
+    },
+    {
+      "topic_id": "t-015",
+      "topic_description": "agent communication platforms as missing infrastructure",
+      "domain": "AI agents",
+      "product_relevant": true,
+      "keywords": [
+        "agent",
+        "communication",
+        "platforms",
+        "interoperability",
+        "infrastructure"
+      ],
+      "supporting_tweets": [],
+      "signals": [],
+      "scores": {
+        "domain_relevance": 93.0,
+        "engagement": 66.0,
+        "controversy": 70.0,
+        "dark_humor": 34.0,
+        "novelty": 80.0,
+        "product_relevance": 100.0
+      },
+      "score_meta": {
+        "base_score": 76.6,
+        "final_score": 81.6,
+        "product_boost": 5.0,
+        "max_similarity": 0.0,
+        "redundancy_penalty": 0.0,
+        "engagement_stats": {}
+      }
+    },
+    {
+      "topic_id": "t-016",
+      "topic_description": "enterprise adoption gaps for automation platforms",
+      "domain": "technology",
+      "product_relevant": false,
+      "keywords": [
+        "enterprise",
+        "adoption",
+        "automation",
+        "platforms",
+        "gap"
+      ],
+      "supporting_tweets": [],
+      "signals": [],
+      "scores": {
+        "domain_relevance": 84.0,
+        "engagement": 56.0,
+        "controversy": 62.0,
+        "dark_humor": 28.0,
+        "novelty": 70.0,
+        "product_relevance": 0.0
+      },
+      "score_meta": {
+        "base_score": 65.9,
+        "final_score": 65.9,
+        "product_boost": 0.0,
+        "max_similarity": 0.0,
+        "redundancy_penalty": 0.0,
+        "engagement_stats": {}
+      }
+    }
+  ]
+}
