@@ -8,7 +8,8 @@ This repo seeds the reference account dataset used to drive style extraction for
 - `data/reference_tweets.json` contains the most recent fetched tweets for style analysis.
 - `data/topic_stream.json` stores raw tweets collected for topic discovery.
 - `data/topic_candidates.json` stores extracted topic candidates prior to validation.
-- `data/topic_signals.json` stores approved topic signals for downstream tweet generation.
+- `data/topic_signals.json` stores scored topic signals with detailed scoring metadata.
+- `data/approved_topics.json` stores approved topics that pass the scoring threshold.
 - `data/recent_topics.json` stores recently used topics for deduplication.
 - `data/topic_discovery_config.json` holds the topic discovery configuration.
 
@@ -30,7 +31,7 @@ Accounts stay in `pending_engagement_verification` until fresh tweets are pulled
 
 # Topic discovery
 
-The topic discovery pipeline scans reference accounts and keyword searches to surface early, controversial, or high-engagement discussions. It writes the `topic_stream`, `topic_candidates`, and `topic_signals` datasets.
+The topic discovery pipeline scans reference accounts and keyword searches to surface early, controversial, or high-engagement discussions. It writes the `topic_stream`, `topic_candidates`, `topic_signals`, and `approved_topics` datasets.
 
 Run with:
 
@@ -38,6 +39,6 @@ Run with:
 python scripts/topic_discovery.py
 ```
 
-You can adjust keywords, lookback window, or signal thresholds in `data/topic_discovery_config.json`.
+You can adjust keywords, lookback window, signal thresholds, or scoring weights in `data/topic_discovery_config.json`.
 
 # contentagent

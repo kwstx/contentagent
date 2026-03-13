@@ -40,6 +40,16 @@ STOPWORDS = {
     "with",
     "you",
 }
+DOMAIN_TERMS = [
+    ("artificial intelligence", {"ai", "artificial", "llm", "model", "foundation"}),
+    ("AI agents", {"agent", "agents", "multi", "autonomous", "coordination", "interoperability"}),
+    ("autonomous systems", {"autonomous", "robot", "robotics", "systems"}),
+    ("programming and software engineering", {"programming", "software", "code", "developer", "engineering"}),
+    ("startups", {"startup", "founder", "venture", "funding", "vc"}),
+    ("business strategy", {"strategy", "growth", "pricing", "distribution", "market"}),
+    ("technology news", {"release", "launch", "announce", "news", "update"}),
+    ("technology", {"tech", "infrastructure", "cloud", "hardware", "platform"}),
+]
 
 
 def utc_now_iso():
@@ -160,20 +170,31 @@ def search_recent_tweets(query, start_time, max_results, token=None):
 
 def classify_domain(keywords):
     keyword_set = set(keywords)
-    mapping = [
-        ("artificial intelligence", {"ai", "artificial", "llm", "model", "foundation"}),
-        ("AI agents", {"agent", "agents", "multi", "autonomous"}),
-        ("autonomous systems", {"autonomous", "robot", "robotics", "systems"}),
-        ("programming and software engineering", {"programming", "software", "code", "developer", "engineering"}),
-        ("startups", {"startup", "founder", "venture", "funding", "vc"}),
-        ("business strategy", {"strategy", "growth", "pricing", "distribution", "market"}),
-        ("technology news", {"release", "launch", "announce", "news", "update"}),
-        ("technology", {"tech", "infrastructure", "cloud", "hardware", "platform"}),
-    ]
-    for domain, terms in mapping:
+    for domain, terms in DOMAIN_TERMS:
         if keyword_set.intersection(terms):
             return domain
     return None
+
+
+def score_domain_relevance(keywords, topic_scope):
+    keyword_set = set(keywords)
+    best_domain = None
+    best_ratio = 0.0
+    for domain, terms in DOMAIN_TERMS:
+        if domain not in topic_scope:
+            continue
+        overlap = len(keyword_set.intersection(terms))
+        if overlap == 0:
+            continue
+        denom = max(1, min(len(keyword_set), len(terms)))
+        ratio = overlap / float(denom)
+        if ratio > best_ratio:
+            best_ratio = ratio
+            best_domain = domain
+    if not best_domain:
+        return None, 0.0
+    score = min(100.0, 50.0 + best_ratio * 50.0)
+    return best_domain, score
 
 
 def detect_product_relevance(keywords, product_keywords):
@@ -195,6 +216,106 @@ def jaccard_similarity(a, b):
     overlap = a_set.intersection(b_set)
     union = a_set.union(b_set)
     return len(overlap) / float(len(union))
+
+
+def aggregate_signal_rate(signals, key):
+    if not signals:
+        return 0.0
+    hits = sum(1 for signal in signals if signal.get(key))
+    return hits / float(len(signals))
+
+
+def score_controversy(signals, keywords, scoring_cfg):
+    contrarian_rate = aggregate_signal_rate(signals, "contrarian")
+    debate_rate = aggregate_signal_rate(signals, "debate")
+    base_score = (contrarian_rate * 0.7 + debate_rate * 0.3) * 100.0
+
+    keyword_bonus = 0.0
+    controversy_terms = scoring_cfg.get("controversy_keywords", [])
+    if controversy_terms:
+        term_tokens = set()
+        for phrase in controversy_terms:
+            term_tokens.update(normalize_text(phrase).split())
+        overlap = set(keywords).intersection(term_tokens)
+        if overlap:
+            keyword_bonus = min(15.0, 5.0 * len(overlap))
+
+    return min(100.0, base_score + keyword_bonus)
+
+
+def score_dark_humor(keywords, scoring_cfg):
+    humor_terms = scoring_cfg.get("dark_humor_keywords", [])
+    if not humor_terms:
+        return 0.0
+    term_tokens = set()
+    for phrase in humor_terms:
+        term_tokens.update(normalize_text(phrase).split())
+    overlap = set(keywords).intersection(term_tokens)
+    if not overlap:
+        return 0.0
+    ratio = len(overlap) / float(max(1, min(len(keywords), len(term_tokens))))
+    return min(100.0, ratio * 100.0)
+
+
+def score_engagement(supporting_tweets, signals_cfg):
+    if not supporting_tweets:
+        return 0.0, {}
+
+    engagements = []
+    rates = []
+    reply_ratios = []
+
+    for tweet in supporting_tweets:
+        engagements.append(compute_engagement(tweet))
+        rate = compute_engagement_rate(tweet, tweet.get("author_followers"))
+        if rate is not None:
+            rates.append(rate)
+        metrics = tweet.get("public_metrics", {})
+        like_count = metrics.get("like_count", 0)
+        reply_count = metrics.get("reply_count", 0)
+        if like_count > 0:
+            reply_ratios.append(reply_count / float(like_count))
+
+    avg_engagement = sum(engagements) / float(len(engagements))
+    avg_rate = sum(rates) / float(len(rates)) if rates else None
+    avg_reply_ratio = sum(reply_ratios) / float(len(reply_ratios)) if reply_ratios else 0.0
+
+    baseline_rate = signals_cfg.get("baseline_engagement_rate", 0.001)
+    min_total_engagement = signals_cfg.get("min_total_engagement", 10)
+    reply_ratio_threshold = signals_cfg.get("reply_ratio_threshold", 0.25)
+
+    rate_score = 0.0
+    if avg_rate is not None and baseline_rate > 0:
+        rate_score = min(100.0, (avg_rate / baseline_rate) * 40.0)
+    volume_score = min(100.0, (avg_engagement / float(max(1, min_total_engagement))) * 40.0)
+    reply_score = min(100.0, (avg_reply_ratio / float(max(0.01, reply_ratio_threshold))) * 20.0)
+
+    engagement_score = min(100.0, rate_score + volume_score + reply_score)
+    return engagement_score, {
+        "avg_engagement": avg_engagement,
+        "avg_engagement_rate": avg_rate,
+        "avg_reply_ratio": avg_reply_ratio,
+    }
+
+
+def score_novelty(keywords, recent_topics, similarity_threshold, scoring_cfg):
+    max_similarity = 0.0
+    for recent in recent_topics:
+        similarity = jaccard_similarity(keywords, recent.get("keywords", []))
+        max_similarity = max(max_similarity, similarity)
+    novelty_score = max(0.0, 100.0 - (max_similarity * 100.0))
+    penalty = 0.0
+    if max_similarity >= similarity_threshold:
+        penalty = scoring_cfg.get("redundancy_penalty", 25.0)
+        penalty += max_similarity * scoring_cfg.get("max_similarity_penalty", 15.0)
+    return novelty_score, max_similarity, penalty
+
+
+def weighted_score(scores, weights):
+    total_weight = sum(weights.values()) if weights else 0.0
+    if total_weight <= 0:
+        return 0.0
+    return sum(scores.get(key, 0.0) * weight for key, weight in weights.items()) / total_weight
 
 
 def build_topic_description(keywords):
@@ -258,6 +379,11 @@ def main():
         "--topic-signals-out",
         default=os.path.join("data", "topic_signals.json"),
         help="Output path for topic_signals.json",
+    )
+    parser.add_argument(
+        "--approved-topics-out",
+        default=os.path.join("data", "approved_topics.json"),
+        help="Output path for approved_topics.json",
     )
     parser.add_argument(
         "--max-results",
@@ -344,6 +470,7 @@ def main():
     reply_ratio_threshold = signals_cfg.get("reply_ratio_threshold", 0.25)
     min_reply_count = signals_cfg.get("min_reply_count", 5)
     contrarian_markers = signals_cfg.get("contrarian_markers", [])
+    scoring_cfg = config.get("scoring", {})
 
     candidates = []
     candidate_groups = defaultdict(list)
@@ -421,45 +548,84 @@ def main():
     )
 
     topic_signals = []
+    approved_topics = []
     product_keywords = config.get("product_keywords", [])
     similarity_threshold = config.get("deduplication", {}).get("similarity_threshold", 0.5)
+    weights = scoring_cfg.get(
+        "weights",
+        {
+            "domain_relevance": 0.3,
+            "engagement": 0.3,
+            "controversy": 0.15,
+            "dark_humor": 0.1,
+            "novelty": 0.1,
+            "product_relevance": 0.05,
+        },
+    )
+    approval_threshold = scoring_cfg.get("threshold", 70)
 
     for candidate in candidates:
-        domain = classify_domain(candidate["keywords"])
-        if not domain or domain not in config.get("topic_scope", []):
+        domain, domain_score = score_domain_relevance(candidate["keywords"], config.get("topic_scope", []))
+        if not domain or domain_score <= 0:
             continue
 
         product_relevant = detect_product_relevance(candidate["keywords"], product_keywords)
-
-        duplicate = False
-        for recent in recent_topics:
-            similarity = jaccard_similarity(candidate["keywords"], recent.get("keywords", []))
-            if similarity >= similarity_threshold:
-                duplicate = True
-                break
-        if duplicate:
-            continue
-
-        topic_signals.append(
-            {
-                "topic_description": candidate["topic_description"],
-                "domain": domain,
-                "product_relevant": product_relevant,
-                "keywords": candidate["keywords"],
-                "supporting_tweets": candidate["supporting_tweets"],
-                "signals": candidate["signals"],
-            }
+        controversy_score = score_controversy(candidate["signals"], candidate["keywords"], scoring_cfg)
+        dark_humor_score = score_dark_humor(candidate["keywords"], scoring_cfg)
+        engagement_score, engagement_stats = score_engagement(candidate["supporting_tweets"], signals_cfg)
+        novelty_score, max_similarity, redundancy_penalty = score_novelty(
+            candidate["keywords"], recent_topics, similarity_threshold, scoring_cfg
         )
+        product_score = 100.0 if product_relevant else 0.0
+
+        score_inputs = {
+            "domain_relevance": domain_score,
+            "engagement": engagement_score,
+            "controversy": controversy_score,
+            "dark_humor": dark_humor_score,
+            "novelty": novelty_score,
+            "product_relevance": product_score,
+        }
+        base_score = weighted_score(score_inputs, weights)
+        product_boost = scoring_cfg.get("product_boost", 5.0) if product_relevant else 0.0
+        final_score = max(0.0, min(100.0, base_score + product_boost - redundancy_penalty))
+
+        topic_payload = {
+            "topic_description": candidate["topic_description"],
+            "domain": domain,
+            "product_relevant": product_relevant,
+            "keywords": candidate["keywords"],
+            "supporting_tweets": candidate["supporting_tweets"],
+            "signals": candidate["signals"],
+            "scores": score_inputs,
+            "score_meta": {
+                "base_score": base_score,
+                "final_score": final_score,
+                "product_boost": product_boost,
+                "max_similarity": max_similarity,
+                "redundancy_penalty": redundancy_penalty,
+                "engagement_stats": engagement_stats,
+            },
+        }
+
+        topic_signals.append(topic_payload)
+        if final_score >= approval_threshold:
+            approved_topics.append(topic_payload)
 
     write_json(
         args.topic_signals_out,
         {"dataset": "topic_signals", "generated_at": fetched_at, "topics": topic_signals},
     )
+    write_json(
+        args.approved_topics_out,
+        {"dataset": "approved_topics", "generated_at": fetched_at, "topics": approved_topics},
+    )
 
     print(
         f"Wrote {len(topic_stream)} tweets to {args.topic_stream_out}, "
         f"{len(candidates)} candidates to {args.topic_candidates_out}, "
-        f"{len(topic_signals)} signals to {args.topic_signals_out}."
+        f"{len(topic_signals)} signals to {args.topic_signals_out}, "
+        f"{len(approved_topics)} approved to {args.approved_topics_out}."
     )
 
 

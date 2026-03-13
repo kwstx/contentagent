@@ -73,6 +73,43 @@
     "max_keywords": 6,
     "min_supporting_tweets": 2
   },
+  "scoring": {
+    "threshold": 70,
+    "weights": {
+      "domain_relevance": 0.3,
+      "engagement": 0.3,
+      "controversy": 0.15,
+      "dark_humor": 0.1,
+      "novelty": 0.1,
+      "product_relevance": 0.05
+    },
+    "product_boost": 5,
+    "redundancy_penalty": 25,
+    "max_similarity_penalty": 15,
+    "controversy_keywords": [
+      "hype",
+      "overrated",
+      "underrated",
+      "compliance theater",
+      "vendor lock in",
+      "pivots",
+      "burn rate",
+      "growth at all costs",
+      "unprofitable",
+      "fake it"
+    ],
+    "dark_humor_keywords": [
+      "layoffs",
+      "burn",
+      "pivot",
+      "overhyped",
+      "death march",
+      "cost cutting",
+      "tech debt",
+      "vaporware",
+      "bubble"
+    ]
+  },
   "deduplication": {
     "similarity_threshold": 0.5
   }
