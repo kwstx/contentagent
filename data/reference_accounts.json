@@ -1,0 +1,90 @@
+{
+  "dataset": "reference_accounts",
+  "generated_at": "2026-03-13",
+  "notes": [
+    "Follower counts are sourced from public web pages and may be stale; re-verify via API before production use.",
+    "Average engagement rates are computed from recent tweets via scripts/fetch_reference_tweets.py when available."
+  ],
+  "accounts": [
+    {
+      "username": "NoLimitGains",
+      "niche_category": "macro/markets/finance",
+      "follower_count": 44405,
+      "follower_count_source": "sorsa.ai",
+      "avg_engagement_rate": null,
+      "avg_engagement_rate_source": "pending_fetch_reference_tweets",
+      "weight": 0.75,
+      "status": "pending_engagement_verification"
+    },
+    {
+      "username": "beffjezos",
+      "niche_category": "tech/crypto/economics",
+      "follower_count": 191000,
+      "follower_count_source": "xbeast.io",
+      "avg_engagement_rate": null,
+      "avg_engagement_rate_source": "pending_fetch_reference_tweets",
+      "weight": 0.70,
+      "status": "pending_engagement_verification"
+    },
+    {
+      "username": "steipete",
+      "niche_category": "developer tools/startups",
+      "follower_count": 413000,
+      "follower_count_source": "xbeast.io",
+      "avg_engagement_rate": null,
+      "avg_engagement_rate_source": "pending_fetch_reference_tweets",
+      "weight": 0.80,
+      "status": "pending_engagement_verification"
+    },
+    {
+      "username": "birdabo",
+      "niche_category": "tech culture/AI",
+      "follower_count": 15432,
+      "follower_count_source": "xo2.io",
+      "avg_engagement_rate": null,
+      "avg_engagement_rate_source": "pending_fetch_reference_tweets",
+      "weight": 0.60,
+      "status": "pending_engagement_verification"
+    },
+    {
+      "username": "oprydai",
+      "niche_category": "robotics/engineering/AI",
+      "follower_count": 58000,
+      "follower_count_source": "twstalker.com",
+      "avg_engagement_rate": null,
+      "avg_engagement_rate_source": "pending_fetch_reference_tweets",
+      "weight": 0.60,
+      "status": "pending_engagement_verification"
+    },
+    {
+      "username": "garrytan",
+      "niche_category": "startups/venture capital",
+      "follower_count": 443200,
+      "follower_count_source": "twitter.com/intent/follow",
+      "avg_engagement_rate": 0.0013,
+      "avg_engagement_rate_source": "favikon.com",
+      "weight": 0.90,
+      "status": "eligible"
+    },
+    {
+      "username": "rauchg",
+      "niche_category": "developer tools/web",
+      "follower_count": 383000,
+      "follower_count_source": "arrfounder.com",
+      "avg_engagement_rate": null,
+      "avg_engagement_rate_source": "pending_fetch_reference_tweets",
+      "weight": 0.85,
+      "status": "pending_engagement_verification"
+    },
+    {
+      "username": "naval",
+      "niche_category": "startups/philosophy/investing",
+      "follower_count": 2700000,
+      "follower_count_source": "twitter.com/intent/follow",
+      "avg_engagement_rate": null,
+      "avg_engagement_rate_source": "pending_fetch_reference_tweets",
+      "weight": 1.0,
+      "status": "pending_engagement_verification"
+    }
+  ]
+}
