@@ -1,10 +1,10 @@
 {
   "dataset": "tweet_patterns",
-  "generated_at": "2026-03-13T19:22:27+00:00",
+  "generated_at": "2026-03-14T11:50:33+00:00",
   "source_dataset": {
-    "path": "data/viral_tweet_dataset.json",
-    "tweet_count": 3,
-    "generated_at": "2026-03-13T19:21:43+00:00"
+    "path": "data\\viral_tweet_dataset.json",
+    "tweet_count": 10,
+    "generated_at": "2026-03-14T11:49:30+00:00"
   },
   "config_snapshot": {
     "topic_scope": [
@@ -17,109 +17,30 @@
       "business strategy",
       "technology news"
     ],
-    "min_support": 1,
+    "min_support": 3,
     "top_patterns": 30
   },
-  "patterns": [
-    {
-      "pattern_id": "pattern_001",
-      "support": 2,
-      "hook": {
-        "strategy": "observational_hook",
-        "template": "Observation hook: '[Reality] keeps repeating.'"
-      },
-      "argument": {
-        "structure": "claim_reason_implication",
-        "template": "Claim, reason, implication in 2-3 sentences."
-      },
-      "closing": {
-        "style": "cynical_observation",
-        "template": "Cynical close: 'And nobody will fix it this quarter.'",
-        "dark_humor_compatible": false
-      },
-      "formatting": {
-        "line_breaks": "multi_breaks",
-        "sentence_count": "three_sentences",
-        "char_length": "near_limit_241_280"
-      },
-      "topics": [
-        "startups",
-        "AI agents"
-      ],
-      "performance": {
-        "avg_normalized_engagement": 0.045,
-        "weighted_score": 0.045
-      },
-      "evidence": {
-        "sample_tweet_ids": [
-          "o-0011",
-          "o-0021"
-        ]
-      }
-    },
-    {
-      "pattern_id": "pattern_002",
-      "support": 1,
-      "hook": {
-        "strategy": "observational_hook",
-        "template": "Observation hook: '[Reality] keeps repeating.'"
-      },
-      "argument": {
-        "structure": "claim_with_contrast",
-        "template": "Claim, then a contrast: 'But [counterpoint].'"
-      },
-      "closing": {
-        "style": "plain_close",
-        "template": "Neutral close: 'That is the tradeoff.'",
-        "dark_humor_compatible": false
-      },
-      "formatting": {
-        "line_breaks": "multi_breaks",
-        "sentence_count": "three_sentences",
-        "char_length": "near_limit_241_280"
-      },
-      "topics": [
-        "AI agents"
-      ],
-      "performance": {
-        "avg_normalized_engagement": 0.0412,
-        "weighted_score": 0.0412
-      },
-      "evidence": {
-        "sample_tweet_ids": [
-          "o-0041"
-        ]
-      }
-    }
-  ],
-  "topic_mappings": {
-    "startups": [
-      "pattern_001"
-    ],
-    "AI agents": [
-      "pattern_001",
-      "pattern_002"
-    ]
-  },
+  "patterns": [],
+  "topic_mappings": {},
   "formatting_summary": {
-    "total": 3,
+    "total": 10,
     "line_breaks": {
-      "no_breaks": 0,
+      "no_breaks": 2,
       "single_break": 0,
-      "multi_breaks": 3
+      "multi_breaks": 8
     },
     "sentence_counts": {
-      "single_sentence": 0,
+      "single_sentence": 2,
       "two_sentences": 0,
-      "three_sentences": 3,
-      "four_plus_sentences": 0
+      "three_sentences": 6,
+      "four_plus_sentences": 2
     },
     "length_buckets": {
-      "short_<=160": 0,
-      "mid_161_200": 0,
+      "short_<=160": 2,
+      "mid_161_200": 1,
       "long_201_240": 0,
-      "near_limit_241_280": 3
+      "near_limit_241_280": 7
     },
-    "non_ascii_ratio": 0.0
+    "non_ascii_ratio": 0.3
   }
 }

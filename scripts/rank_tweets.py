@@ -7,7 +7,7 @@ from datetime import datetime, timezone
 
 
 TARGET_MIN = 180
-TARGET_MAX = 260
+TARGET_MAX = 280
 MAX_LEN = 280
 DEFAULT_TOP_N = 12
 DEFAULT_PRODUCT_RATIO = 0.15
@@ -71,6 +71,13 @@ def detect_opinionated(text):
         "everyone is wrong",
         "nobody wants",
         "we keep pretending",
+        "truth",
+        "reality",
+        "bottleneck",
+        "failure",
+        "friction",
+        "instead of",
+        "why we",
     ]
     lower = text.lower()
     return any(marker in lower for marker in markers)

@@ -49,18 +49,23 @@ def main():
         print(f"[{i+1}/{len(to_process)}] Generating tweet for: {topic_desc[:50]}...")
         
         prompt = f"""
-        Generate a single tweet for the following concept. 
-        Follow the persona and style rules provided in the system prompt.
+        Task: Write a new 3-line tweet about {topic_desc}.
+        Line 1: A surprising or controversial claim.
+        Line 2: An insight about: {concept['core_insight']}
+        Line 3: A dark, cynical twist.
         
-        TOPIC: {topic_desc}
-        HOOK TYPE: {concept['hook_type']}
-        CORE INSIGHT: {concept['core_insight']}
-        PRODUCT RELEVANCE: {concept['product_relevance']}
+        Style Rules:
+        - Exactly 3 lines (use Enter).
+        - No bolding (**), no labels (Hook:), no hashtags.
+        - Tone: Opinionated, professional, and cynical.
+        - Length: 180-260 characters total.
         
-        OUTPUT ONLY THE TWEET TEXT. 
-        No labels like 'Hook:', 'Argument:', 'Twist:'. 
-        No hashtags. No emojis. 180-260 characters.
+        Example (DO NOT COPY THIS TEXT):
+        Founders optimize for headcount optics instead of actual growth reality.
+        Then they wonder why the burn rate bottleneck kills the product before launch.
+        The postmortem will say "bad timing," which is how you know nobody learned.
         """
+        # Note: We provide only ONE example to avoid confusing the small model.
         
         tweet_text = client.generate(prompt, system_prompt=system_prompt)
         if tweet_text:

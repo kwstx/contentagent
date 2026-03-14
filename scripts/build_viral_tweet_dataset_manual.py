@@ -38,14 +38,14 @@ STOPWORDS = {
 }
 
 DOMAIN_TERMS = [
-    ("artificial intelligence", {"ai", "artificial", "llm", "model", "foundation"}),
-    ("AI agents", {"agent", "agents", "multi", "autonomous", "coordination", "interoperability"}),
-    ("autonomous systems", {"autonomous", "robot", "robotics", "systems"}),
-    ("programming and software engineering", {"programming", "software", "code", "developer", "engineering"}),
-    ("startups", {"startup", "founder", "funding", "vc", "venture"}),
-    ("business strategy", {"strategy", "growth", "pricing", "distribution", "market"}),
-    ("technology news", {"release", "launch", "announce", "news", "update"}),
-    ("technology", {"tech", "infrastructure", "cloud", "hardware", "platform"}),
+    ("artificial intelligence", {"ai", "artificial", "intelligence", "llm", "model", "foundation", "ml"}),
+    ("AI agents", {"agent", "agents", "multi", "autonomous", "coordination", "interoperability", "swarm"}),
+    ("autonomous systems", {"autonomous", "robot", "robotics", "systems", "self-driving"}),
+    ("programming and software engineering", {"programming", "software", "code", "developer", "engineering", "javascript", "python", "dev"}),
+    ("startups", {"startup", "founder", "funding", "vc", "venture", "seed", "series"}),
+    ("business strategy", {"strategy", "growth", "pricing", "distribution", "market", "economy", "value", "monopolistic"}),
+    ("technology news", {"release", "launch", "announce", "news", "update", "updated", "confirmed", "war", "crisis"}),
+    ("technology", {"tech", "technology", "infrastructure", "cloud", "hardware", "platform", "innovation", "technologists", "future", "optimism"}),
 ]
 
 

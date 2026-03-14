@@ -1,14 +1,14 @@
 {
   "dataset": "ranked_tweets",
-  "generated_at": "2026-03-13T19:46:10+00:00",
+  "generated_at": "2026-03-14T12:24:07+00:00",
   "source_dataset": {
     "path": "data/generated_tweets.json",
-    "tweet_count": 240
+    "tweet_count": 10
   },
   "ranking_config": {
     "target_char_range": [
       180,
-      260
+      280
     ],
     "max_characters": 280,
     "top_n": 12,
@@ -16,314 +16,87 @@
     "product_cap": 1,
     "recent_tweets": {
       "path": "data/recent_tweets.json",
-      "count": 11,
+      "count": 14,
       "loaded": true
     }
   },
-  "rejected_count": 0,
-  "rejections": [],
-  "candidate_count": 240,
-  "ranked_count": 12,
+  "rejected_count": 8,
+  "rejections": [
+    {
+      "tweet_id": "g-llm-0000",
+      "reason": "length"
+    },
+    {
+      "tweet_id": "g-llm-0001",
+      "reason": "length"
+    },
+    {
+      "tweet_id": "g-llm-0002",
+      "reason": "length"
+    },
+    {
+      "tweet_id": "g-llm-0004",
+      "reason": "non_ascii"
+    },
+    {
+      "tweet_id": "g-llm-0005",
+      "reason": "structure"
+    },
+    {
+      "tweet_id": "g-llm-0007",
+      "reason": "length"
+    },
+    {
+      "tweet_id": "g-llm-0008",
+      "reason": "structure"
+    },
+    {
+      "tweet_id": "g-llm-0009",
+      "reason": "length"
+    }
+  ],
+  "candidate_count": 2,
+  "ranked_count": 2,
   "ranked_tweets": [
     {
-      "tweet_id": "g-0109",
-      "concept_id": "c-022",
-      "topic_id": "t-008",
-      "hook_type": "contrarian",
-      "tone_flags": [
-        "professional",
-        "opinionated",
-        "controversial",
-        "dark_humor"
-      ],
-      "product_mention": false,
-      "product_boost_applied": false,
-      "structural_template": "fallback_contrarian_v1",
-      "predicted_engagement_score": 90.55,
-      "score_breakdown": {
-        "model_score": 98.7,
-        "product_boost": 0.0,
-        "diversity_penalty": 8.15,
-        "max_recent_similarity": 0.543,
-        "max_viral_similarity": 0.543
-      },
-      "text": "The popular take on contrarian takes on VC-driven startup advice is wrong. Coordination is the bottleneck, not capability.\nFounders chase headcount optics, then burn rate chases them.\nThe postmortem will blame process, and nothing will change.",
-      "char_count": 243
-    },
-    {
-      "tweet_id": "g-0169",
-      "concept_id": "c-034",
-      "topic_id": "t-012",
-      "hook_type": "contrarian",
-      "tone_flags": [
-        "professional",
-        "opinionated",
-        "controversial",
-        "dark_humor"
-      ],
-      "product_mention": false,
-      "product_boost_applied": false,
-      "structural_template": "fallback_contrarian_v1",
-      "predicted_engagement_score": 90.08,
-      "score_breakdown": {
-        "model_score": 93.08,
-        "product_boost": 0.0,
-        "diversity_penalty": 3.0,
-        "max_recent_similarity": 0.2,
-        "max_viral_similarity": 0.2
-      },
-      "text": "The popular take on automation of coding with AI and its hidden costs is wrong. Coordination is the bottleneck, not capability.\nSpeed hides design debt until incidents collect interest.\nThe postmortem will blame process, and nothing will change.",
-      "char_count": 245
-    },
-    {
-      "tweet_id": "g-0094",
-      "concept_id": "c-019",
-      "topic_id": "t-007",
-      "hook_type": "contrarian",
-      "tone_flags": [
-        "professional",
-        "opinionated",
-        "controversial",
-        "dark_humor"
-      ],
-      "product_mention": false,
-      "product_boost_applied": false,
-      "structural_template": "fallback_contrarian_v1",
-      "predicted_engagement_score": 89.43,
-      "score_breakdown": {
-        "model_score": 97.43,
-        "product_boost": 0.0,
-        "diversity_penalty": 8.0,
-        "max_recent_similarity": 0.533,
-        "max_viral_similarity": 0.4
-      },
-      "text": "The popular take on startup hiring cycles and the layoff reflex is wrong. Coordination is the bottleneck, not capability.\nFounders chase headcount optics, then burn rate chases them.\nThe postmortem will blame process, and nothing will change.",
-      "char_count": 242
-    },
-    {
-      "tweet_id": "g-0199",
-      "concept_id": "c-040",
-      "topic_id": "t-014",
-      "hook_type": "contrarian",
-      "tone_flags": [
-        "professional",
-        "opinionated",
-        "controversial",
-        "dark_humor"
-      ],
-      "product_mention": false,
-      "product_boost_applied": false,
-      "structural_template": "fallback_contrarian_v1",
-      "predicted_engagement_score": 89.13,
-      "score_breakdown": {
-        "model_score": 92.8,
-        "product_boost": 0.0,
-        "diversity_penalty": 3.67,
-        "max_recent_similarity": 0.245,
-        "max_viral_similarity": 0.245
-      },
-      "text": "The popular take on AI regulation theater and compliance optics is wrong. Coordination is the bottleneck, not capability.\nRegulation headlines promise safety while risks ship.\nThe postmortem will blame process, and nothing will change.",
-      "char_count": 235
-    },
-    {
-      "tweet_id": "g-0154",
-      "concept_id": "c-031",
-      "topic_id": "t-011",
-      "hook_type": "contrarian",
-      "tone_flags": [
-        "professional",
-        "opinionated",
-        "controversial",
-        "dark_humor"
-      ],
-      "product_mention": false,
-      "product_boost_applied": false,
-      "structural_template": "fallback_contrarian_v1",
-      "predicted_engagement_score": 88.81,
-      "score_breakdown": {
-        "model_score": 91.98,
-        "product_boost": 0.0,
-        "diversity_penalty": 3.17,
-        "max_recent_similarity": 0.212,
-        "max_viral_similarity": 0.212
-      },
-      "text": "The popular take on inefficiencies in modern programming practices is wrong. Coordination is the bottleneck, not capability.\nSpeed hides design debt until incidents collect interest.\nThe postmortem will blame process, and nothing will change.",
-      "char_count": 242
-    },
-    {
-      "tweet_id": "g-0184",
-      "concept_id": "c-037",
-      "topic_id": "t-013",
-      "hook_type": "contrarian",
-      "tone_flags": [
-        "professional",
-        "opinionated",
-        "controversial",
-        "dark_humor"
-      ],
-      "product_mention": false,
-      "product_boost_applied": false,
-      "structural_template": "fallback_contrarian_v1",
-      "predicted_engagement_score": 88.48,
-      "score_breakdown": {
-        "model_score": 92.08,
-        "product_boost": 0.0,
-        "diversity_penalty": 3.6,
-        "max_recent_similarity": 0.24,
-        "max_viral_similarity": 0.24
-      },
-      "text": "The popular take on skeptical takes on big tech announcements is wrong. Coordination is the bottleneck, not capability.\nRegulation headlines promise safety while risks ship.\nThe postmortem will blame process, and nothing will change.",
-      "char_count": 233
-    },
-    {
-      "tweet_id": "g-0168",
-      "concept_id": "c-034",
-      "topic_id": "t-012",
-      "hook_type": "contrarian",
-      "tone_flags": [
-        "professional",
-        "opinionated",
-        "controversial",
-        "dark_humor"
-      ],
-      "product_mention": false,
-      "product_boost_applied": false,
-      "structural_template": "fallback_contrarian_v1",
-      "predicted_engagement_score": 88.34,
-      "score_breakdown": {
-        "model_score": 93.08,
-        "product_boost": 0.0,
-        "diversity_penalty": 4.74,
-        "max_recent_similarity": 0.316,
-        "max_viral_similarity": 0.31
-      },
-      "text": "The popular take on automation of coding with AI and its hidden costs is wrong. Coordination is the bottleneck, not capability.\nSpeed hides design debt until incidents collect interest.\nThe postmortem will say \"process,\" which is how you know nobody fixed it.",
-      "char_count": 259
-    },
-    {
-      "tweet_id": "g-0034",
-      "concept_id": "c-007",
+      "tweet_id": "g-llm-0006",
+      "concept_id": "unknown",
       "topic_id": "t-003",
-      "hook_type": "contrarian",
-      "tone_flags": [
-        "professional",
-        "opinionated",
-        "controversial",
-        "dark_humor"
-      ],
+      "hook_type": null,
+      "tone_flags": [],
       "product_mention": false,
       "product_boost_applied": false,
-      "structural_template": "fallback_contrarian_v1",
-      "predicted_engagement_score": 88.11,
+      "structural_template": null,
+      "predicted_engagement_score": 92.62,
       "score_breakdown": {
-        "model_score": 96.26,
+        "model_score": 97.26,
         "product_boost": 0.0,
-        "diversity_penalty": 8.15,
-        "max_recent_similarity": 0.543,
-        "max_viral_similarity": 0.543
+        "diversity_penalty": 4.64,
+        "max_recent_similarity": 0.309,
+        "max_viral_similarity": 0.304
       },
-      "text": "The popular take on coordination debt in multi-agent AI systems is wrong. Coordination is the bottleneck, not capability.\nTeams ship clever agents, then wonder why they drift apart.\nThe postmortem will blame process, and nothing will change.",
-      "char_count": 241
-    },
-    {
-      "tweet_id": "g-0124",
-      "concept_id": "c-025",
-      "topic_id": "t-009",
-      "hook_type": "contrarian",
-      "tone_flags": [
-        "professional",
-        "opinionated",
-        "controversial",
-        "dark_humor"
-      ],
-      "product_mention": false,
-      "product_boost_applied": false,
-      "structural_template": "fallback_contrarian_v1",
-      "predicted_engagement_score": 87.99,
-      "score_breakdown": {
-        "model_score": 91.36,
-        "product_boost": 0.0,
-        "diversity_penalty": 3.37,
-        "max_recent_similarity": 0.224,
-        "max_viral_similarity": 0.224
-      },
-      "text": "The popular take on strategic missteps when scaling tech products is wrong. Coordination is the bottleneck, not capability.\nPricing is positioning, not spreadsheet output.\nThe postmortem will blame process, and nothing will change.",
+      "text": "**Founders optimize for headcount optics instead of actual growth reality.**\nThen they wonder why the burn rate bottleneck kills the product before launch.\nThe postmortem will say \"bad timing,\" which is how you know nobody learned.",
       "char_count": 231
     },
     {
-      "tweet_id": "g-0037",
-      "concept_id": "c-008",
-      "topic_id": "t-003",
-      "hook_type": "curiosity",
-      "tone_flags": [
-        "professional",
-        "opinionated",
-        "controversial",
-        "dark_humor"
-      ],
-      "product_mention": true,
-      "product_boost_applied": true,
-      "structural_template": "fallback_curiosity_v1",
-      "predicted_engagement_score": 87.88,
-      "score_breakdown": {
-        "model_score": 88.26,
-        "product_boost": 5,
-        "diversity_penalty": 5.38,
-        "max_recent_similarity": 0.358,
-        "max_viral_similarity": 0.358
-      },
-      "text": "The quiet part about coordination debt in multi-agent AI systems: the hard part is rarely technical.\nTeams ship clever agents, then wonder why they drift.\nEngram shows coordination is a system problem, not a culture deck. The meetings remain.",
-      "char_count": 242
-    },
-    {
-      "tweet_id": "g-0198",
-      "concept_id": "c-040",
-      "topic_id": "t-014",
-      "hook_type": "contrarian",
-      "tone_flags": [
-        "professional",
-        "opinionated",
-        "controversial",
-        "dark_humor"
-      ],
+      "tweet_id": "g-llm-0003",
+      "concept_id": "unknown",
+      "topic_id": "t-002",
+      "hook_type": null,
+      "tone_flags": [],
       "product_mention": false,
       "product_boost_applied": false,
-      "structural_template": "fallback_contrarian_v1",
-      "predicted_engagement_score": 87.61,
+      "structural_template": null,
+      "predicted_engagement_score": 85.93,
       "score_breakdown": {
-        "model_score": 92.8,
+        "model_score": 89.32,
         "product_boost": 0.0,
-        "diversity_penalty": 5.19,
-        "max_recent_similarity": 0.346,
-        "max_viral_similarity": 0.34
+        "diversity_penalty": 3.39,
+        "max_recent_similarity": 0.226,
+        "max_viral_similarity": 0.116
       },
-      "text": "The popular take on AI regulation theater and compliance optics is wrong. Coordination is the bottleneck, not capability.\nRegulation headlines promise safety while risks ship.\nThe postmortem will say \"process,\" which is how you know nobody fixed it.",
-      "char_count": 249
-    },
-    {
-      "tweet_id": "g-0108",
-      "concept_id": "c-022",
-      "topic_id": "t-008",
-      "hook_type": "contrarian",
-      "tone_flags": [
-        "professional",
-        "opinionated",
-        "controversial",
-        "dark_humor"
-      ],
-      "product_mention": false,
-      "product_boost_applied": false,
-      "structural_template": "fallback_contrarian_v1",
-      "predicted_engagement_score": 87.54,
-      "score_breakdown": {
-        "model_score": 98.7,
-        "product_boost": 0.0,
-        "diversity_penalty": 11.16,
-        "max_recent_similarity": 0.744,
-        "max_viral_similarity": 0.744
-      },
-      "text": "The popular take on contrarian takes on VC-driven startup advice is wrong. Coordination is the bottleneck, not capability.\nFounders chase headcount optics, then burn rate chases them.\nThe postmortem will say \"process,\" which is how you know nobody fixed it.",
-      "char_count": 257
+      "text": "AI adoption is like a game of hide-and-seek.  \nInfrastructure reality keeps refusing to match the slide deck,  \nAnd when we finally find it, we only realize it was always there.  \nThat's why ethical blind spots are so hard to spot.",
+      "char_count": 231
     }
   ]
 }

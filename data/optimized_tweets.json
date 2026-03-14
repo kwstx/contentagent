@@ -1,9 +1,9 @@
 {
   "dataset": "optimized_tweets",
-  "generated_at": "2026-03-13T19:46:39+00:00",
+  "generated_at": "2026-03-14T12:24:07+00:00",
   "source_dataset": {
     "path": "data/ranked_tweets.json",
-    "ranked_count": 12
+    "ranked_count": 2
   },
   "optimization_config": {
     "target_char_range": [
@@ -17,248 +17,72 @@
     "product_cap": 1,
     "recent_tweets": {
       "path": "data/recent_tweets.json",
-      "count": 11,
+      "count": 14,
       "loaded": true
     }
   },
-  "rejected_count": 0,
-  "rejections": [],
-  "variant_count": 60,
-  "optimized_count": 9,
+  "rejected_count": 9,
+  "rejections": [
+    {
+      "tweet_id": "g-llm-0006",
+      "reason": "tone"
+    },
+    {
+      "tweet_id": "g-llm-0006",
+      "reason": "tone"
+    },
+    {
+      "tweet_id": "g-llm-0006",
+      "reason": "tone"
+    },
+    {
+      "tweet_id": "g-llm-0006",
+      "reason": "tone"
+    },
+    {
+      "tweet_id": "g-llm-0006",
+      "reason": "tone"
+    },
+    {
+      "tweet_id": "g-llm-0003",
+      "reason": "tone"
+    },
+    {
+      "tweet_id": "g-llm-0003",
+      "reason": "tone"
+    },
+    {
+      "tweet_id": "g-llm-0003",
+      "reason": "tone"
+    },
+    {
+      "tweet_id": "g-llm-0003",
+      "reason": "tone"
+    }
+  ],
+  "variant_count": 1,
+  "optimized_count": 1,
   "optimized_tweets": [
     {
-      "tweet_id": "o-0048",
-      "source_tweet_id": "g-0037",
-      "concept_id": "c-008",
-      "topic_id": "t-003",
-      "hook_type": "curiosity",
-      "tone_flags": [
-        "professional",
-        "opinionated",
-        "controversial",
-        "dark_humor"
-      ],
-      "product_mention": true,
-      "product_boost_applied": true,
-      "structural_template": "fallback_curiosity_v1",
-      "predicted_engagement_score": 87.88,
-      "score_breakdown": {
-        "model_score": 88.26,
-        "product_boost": 5,
-        "diversity_penalty": 5.38,
-        "max_recent_similarity": 0.358,
-        "max_viral_similarity": 0.358
-      },
-      "text": "The quiet part about coordination debt in multi-agent AI systems: the hard part is rarely technical.\nTeams ship clever agents, then wonder why they drift.\nEngram shows coordination is a system problem, not a culture deck. The meetings remain.",
-      "char_count": 242
-    },
-    {
-      "tweet_id": "o-0010",
-      "source_tweet_id": "g-0169",
-      "concept_id": "c-034",
-      "topic_id": "t-012",
+      "tweet_id": "o-0001",
+      "source_tweet_id": "g-llm-0003",
+      "concept_id": "unknown",
+      "topic_id": "t-002",
       "hook_type": "contrarian",
-      "tone_flags": [
-        "professional",
-        "opinionated",
-        "controversial",
-        "dark_humor"
-      ],
+      "tone_flags": [],
       "product_mention": false,
       "product_boost_applied": false,
       "structural_template": "fallback_contrarian_v1",
-      "predicted_engagement_score": 83.2,
+      "predicted_engagement_score": 85.36,
       "score_breakdown": {
-        "model_score": 87.08,
+        "model_score": 93.32,
         "product_boost": 0.0,
-        "diversity_penalty": 3.88,
-        "max_recent_similarity": 0.259,
-        "max_viral_similarity": 0.255
+        "diversity_penalty": 7.96,
+        "max_recent_similarity": 0.531,
+        "max_viral_similarity": 0.246
       },
-      "text": "Most teams blame tools for automation of coding with AI and its hidden costs, but the friction is coordination, not capability.\nSpeed hides design debt until incidents collect interest.\nThe retrofit will arrive right after the damage report.",
-      "char_count": 241
-    },
-    {
-      "tweet_id": "o-0004",
-      "source_tweet_id": "g-0109",
-      "concept_id": "c-022",
-      "topic_id": "t-008",
-      "hook_type": "contrarian",
-      "tone_flags": [
-        "professional",
-        "opinionated",
-        "controversial",
-        "dark_humor"
-      ],
-      "product_mention": false,
-      "product_boost_applied": false,
-      "structural_template": "fallback_contrarian_v1",
-      "predicted_engagement_score": 83.03,
-      "score_breakdown": {
-        "model_score": 92.7,
-        "product_boost": 0.0,
-        "diversity_penalty": 9.67,
-        "max_recent_similarity": 0.644,
-        "max_viral_similarity": 0.644
-      },
-      "text": "Most teams blame tools for contrarian takes on VC-driven startup advice, but the friction is coordination, not capability.\nFounders chase headcount optics, then burn rate chases them.\nThe roadmap will promise fixes, and the calendar will disagree.",
-      "char_count": 247
-    },
-    {
-      "tweet_id": "o-0018",
-      "source_tweet_id": "g-0199",
-      "concept_id": "c-040",
-      "topic_id": "t-014",
-      "hook_type": "contrarian",
-      "tone_flags": [
-        "professional",
-        "opinionated",
-        "controversial",
-        "dark_humor"
-      ],
-      "product_mention": false,
-      "product_boost_applied": false,
-      "structural_template": "fallback_contrarian_v1",
-      "predicted_engagement_score": 82.36,
-      "score_breakdown": {
-        "model_score": 86.8,
-        "product_boost": 0.0,
-        "diversity_penalty": 4.44,
-        "max_recent_similarity": 0.296,
-        "max_viral_similarity": 0.294
-      },
-      "text": "Most teams blame tools for AI regulation theater and compliance optics, but the friction is coordination, not capability.\nRegulation headlines promise safety while risks ship.\nThe dashboard will call it progress, right before the next incident.",
-      "char_count": 244
-    },
-    {
-      "tweet_id": "o-0030",
-      "source_tweet_id": "g-0184",
-      "concept_id": "c-037",
-      "topic_id": "t-013",
-      "hook_type": "contrarian",
-      "tone_flags": [
-        "professional",
-        "opinionated",
-        "controversial",
-        "dark_humor"
-      ],
-      "product_mention": false,
-      "product_boost_applied": false,
-      "structural_template": "fallback_contrarian_v1",
-      "predicted_engagement_score": 81.96,
-      "score_breakdown": {
-        "model_score": 86.08,
-        "product_boost": 0.0,
-        "diversity_penalty": 4.12,
-        "max_recent_similarity": 0.275,
-        "max_viral_similarity": 0.275
-      },
-      "text": "Most teams blame tools for skeptical takes on big tech announcements, but the friction is coordination, not capability.\nRegulation headlines promise safety while risks ship.\nThe retrofit will arrive right after the damage report.",
-      "char_count": 229
-    },
-    {
-      "tweet_id": "o-0025",
-      "source_tweet_id": "g-0154",
-      "concept_id": "c-031",
-      "topic_id": "t-011",
-      "hook_type": "contrarian",
-      "tone_flags": [
-        "professional",
-        "opinionated",
-        "controversial",
-        "dark_humor"
-      ],
-      "product_mention": false,
-      "product_boost_applied": false,
-      "structural_template": "fallback_contrarian_v1",
-      "predicted_engagement_score": 81.89,
-      "score_breakdown": {
-        "model_score": 85.98,
-        "product_boost": 0.0,
-        "diversity_penalty": 4.09,
-        "max_recent_similarity": 0.273,
-        "max_viral_similarity": 0.273
-      },
-      "text": "Most teams blame tools for inefficiencies in modern programming practices, but the friction is coordination, not capability.\nSpeed hides design debt until incidents collect interest.\nThe retrofit will arrive right after the damage report.",
-      "char_count": 238
-    },
-    {
-      "tweet_id": "o-0015",
-      "source_tweet_id": "g-0094",
-      "concept_id": "c-019",
-      "topic_id": "t-007",
-      "hook_type": "contrarian",
-      "tone_flags": [
-        "professional",
-        "opinionated",
-        "controversial",
-        "dark_humor"
-      ],
-      "product_mention": false,
-      "product_boost_applied": false,
-      "structural_template": "fallback_contrarian_v1",
-      "predicted_engagement_score": 81.88,
-      "score_breakdown": {
-        "model_score": 91.43,
-        "product_boost": 0.0,
-        "diversity_penalty": 9.55,
-        "max_recent_similarity": 0.636,
-        "max_viral_similarity": 0.46
-      },
-      "text": "Most teams blame tools for startup hiring cycles and the layoff reflex, but the friction is coordination, not capability.\nFounders chase headcount optics, then burn rate chases them.\nThe retrofit will arrive right after the damage report.",
-      "char_count": 238
-    },
-    {
-      "tweet_id": "o-0043",
-      "source_tweet_id": "g-0124",
-      "concept_id": "c-025",
-      "topic_id": "t-009",
-      "hook_type": "contrarian",
-      "tone_flags": [
-        "professional",
-        "opinionated",
-        "controversial",
-        "dark_humor"
-      ],
-      "product_mention": false,
-      "product_boost_applied": false,
-      "structural_template": "fallback_contrarian_v1",
-      "predicted_engagement_score": 81.4,
-      "score_breakdown": {
-        "model_score": 85.36,
-        "product_boost": 0.0,
-        "diversity_penalty": 3.96,
-        "max_recent_similarity": 0.264,
-        "max_viral_similarity": 0.255
-      },
-      "text": "Most teams blame tools for strategic missteps when scaling tech products, but the friction is coordination, not capability.\nPricing is positioning, not spreadsheet output.\nThe dashboard will call it progress, right before the next incident.",
-      "char_count": 240
-    },
-    {
-      "tweet_id": "o-0039",
-      "source_tweet_id": "g-0034",
-      "concept_id": "c-007",
-      "topic_id": "t-003",
-      "hook_type": "contrarian",
-      "tone_flags": [
-        "professional",
-        "opinionated",
-        "controversial",
-        "dark_humor"
-      ],
-      "product_mention": false,
-      "product_boost_applied": false,
-      "structural_template": "fallback_contrarian_v1",
-      "predicted_engagement_score": 80.71,
-      "score_breakdown": {
-        "model_score": 90.26,
-        "product_boost": 0.0,
-        "diversity_penalty": 9.55,
-        "max_recent_similarity": 0.636,
-        "max_viral_similarity": 0.636
-      },
-      "text": "Most teams blame tools for coordination debt in multi-agent AI systems, but the friction is coordination, not capability.\nTeams ship clever agents, then wonder why they drift apart.\nThe roadmap will promise fixes, and the calendar will disagree.",
-      "char_count": 245
+      "text": "Most teams blame tools for bias and ethical blind spots in AI adoption, but the friction is coordination, not capability.\nInfrastructure reality keeps refusing to match the slide deck,\nAnd when we finally find it, we only realize it was always there.",
+      "char_count": 250
     }
   ]
 }

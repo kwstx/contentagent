@@ -78,7 +78,7 @@
     "recency_half_life_days": 120
   },
   "feature_extraction": {
-    "min_keyword_length": 3,
-    "max_keywords": 8
+    "min_keyword_length": 2,
+    "max_keywords": 15
   }
 }

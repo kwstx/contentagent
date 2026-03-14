@@ -1,6 +1,6 @@
 {
   "dataset": "viral_tweet_dataset",
-  "generated_at": "2026-03-13T19:21:43+00:00",
+  "generated_at": "2026-03-14T11:49:30+00:00",
   "topic_scope": [
     "technology",
     "startups",
@@ -19,8 +19,8 @@
     "recency_half_life_days": 120
   },
   "counts": {
-    "candidates": 0,
-    "accepted": 3
+    "candidates": 7,
+    "accepted": 10
   },
   "tweets": [
     {
@@ -121,6 +121,437 @@
       },
       "passes_threshold": true,
       "collected_at": "2026-03-13T19:21:43+00:00"
+    },
+    {
+      "tweet_id": "v-insp-002",
+      "text": "Introducing @merge: Bridging biological and artificial intelligence to maximize human ability, agency and experience. \n\nWe\u2019re starting out as a research lab, with our ultimate measure of success being products that people love.\n\nConsider joining us!",
+      "created_at": "2026-03-14T10:00:00Z",
+      "url": "https://twitter.com/user/status/insp-002",
+      "author_username": "inspiration_source",
+      "author_id": "999999",
+      "author_followers": 50000,
+      "public_metrics": {
+        "like_count": 2500,
+        "reply_count": 120,
+        "retweet_count": 450,
+        "quote_count": 80,
+        "impression_count": 150000
+      },
+      "engagement_total": 3150,
+      "normalized_engagement": 0.123,
+      "source_type": "manual",
+      "source_query": "manual_inspiration",
+      "topic": {
+        "label": "artificial intelligence",
+        "keywords": [
+          "introducing",
+          "bridging",
+          "biological",
+          "artificial",
+          "intelligence",
+          "maximize"
+        ]
+      },
+      "features": {
+        "char_length": 249,
+        "sentence_count": 3,
+        "line_breaks": 4,
+        "hook_sentence_index": 0,
+        "hook_is_opening": true,
+        "strong_opening": true,
+        "contrarian_claim": false,
+        "punctuation": {
+          "question": 0,
+          "exclamation": 1,
+          "colon": 1,
+          "semicolon": 0,
+          "dash": 0
+        }
+      },
+      "style": {
+        "professional_tone": true,
+        "opinionated": false,
+        "controversial": false,
+        "dark_humor": false,
+        "alignment": "low"
+      },
+      "product_context": {
+        "relevant": false,
+        "matched_keywords": []
+      },
+      "recency_weight": 0.9995608150341407,
+      "collected_at": "2026-03-14T11:49:30+00:00",
+      "passes_threshold": true
+    },
+    {
+      "tweet_id": "v-insp-001",
+      "text": "\ud83d\udea8 THE WAR JUST CROSSED ANOTHER LINE:\n\nHere\u2019s everything from the last 24 hours.\n\n\u2013 Iran has laid approximately A DOZEN MINES in the Strait of Hormuz. CNN confirmed it. This is a massive escalation\n\n\u2013 The US destroyed 16 Iranian minelayers near the strait in response\n\n\u2013 IRGC fired on and stopped TWO vessels trying to pass through Hormuz, a Thailand-flagged bulk carrier and a Liberian container ship. Both hit by projectiles. Fire broke out on the Thai vessel\n\n\u2013 The IEA agreed to release a RECORD 400 million barrels of crude oil from emergency reserves. Largest coordinated release in history\n\n\u2013 Greece just capped profit margins on gasoline and food for 3 months. First country to impose wartime price controls\n\n\u2013 The Pentagon told Congress it spent $5 BILLION on munitions in the FIRST TWO DAYS alone\n\n\u2013 140 US service members have been wounded since the war began. That number was never reported before today\n\n\u2013 Iran says 9,669 civilian sites have been destroyed. Nearly 8,000 residential homes. Plus hospitals, schools, and commercial centers\n\n\u2013 Iran arrested 30 people for spying, including a foreign national\n\n\u2013 Hundreds of thousands rallied in Tehran in support of new Supreme Leader Mojtaba Khamenei\n\n\u2013 Saudi Aramco CEO warned the war could have \u201ccatastrophic consequences\u201d on oil markets. Called the crisis \u201cunprecedented\u201d\n\n\u2013 The UAE consulate in Erbil, Iraq was targeted by Iranian drones\n\n\u2013 An Iranian drone struck the Millennium Tower in Bahrain\u2019s business district. A woman was k*lled. 8 injured\n\n\u2013 Israel struck a residential building in central Beirut\u2019s Aisha Bakkar neighborhood. 4 injured\n\n\u2013 5 people k*lled in a US-Israeli strike on a residential building in Arak, western Iran\n\n\u2013 Iran\u2019s sports minister says Iran WILL NOT participate in the 2026 World Cup in the US. \u201cUnder no circumstances can we participate\u201d\n\n\u2013 Trump said the war will end \u201cvery soon\u201d but \u201cnot this week.\u201d Also said he hasn\u2019t \u201cwon enough\u201d yet and wants \u201cultimate victory\u201d\n\n\u2013 White House says \u201cunconditional surrender\u201d will be personally determined by Trump\n\n\u2013 White House does NOT rule out US ground troops\n\n\u2013 Israel issuing new evacuation orders for 6 areas of southern Lebanon\n\n\u2013 About 50% of Iranian ballistic missiles aimed at Israel carry CLUSTER MUNITIONS. 3,000+ Israeli residents forced from their homes\n\n\u2013 Trump and Putin spoke by phone Monday about the war and Ukraine\n\nDay 12. And Trump says it\u2019s not over yet.\n\nThe outcome of this war will impact markets around the world, but don\u2019t worry, I\u2019ll keep you updated like I always do. Just turn on notifications, this is VERY important.\n\nMany people will wish they followed me sooner.",
+      "created_at": "2026-03-14T10:00:00Z",
+      "url": "https://twitter.com/user/status/insp-001",
+      "author_username": "inspiration_source",
+      "author_id": "999999",
+      "author_followers": 50000,
+      "public_metrics": {
+        "like_count": 2500,
+        "reply_count": 120,
+        "retweet_count": 450,
+        "quote_count": 80,
+        "impression_count": 150000
+      },
+      "engagement_total": 3150,
+      "normalized_engagement": 0.123,
+      "source_type": "manual",
+      "source_query": "manual_inspiration",
+      "topic": {
+        "label": "technology news",
+        "keywords": [
+          "war",
+          "iran",
+          "us",
+          "will",
+          "iranian",
+          "says"
+        ]
+      },
+      "features": {
+        "char_length": 2632,
+        "sentence_count": 22,
+        "line_breaks": 52,
+        "hook_sentence_index": 0,
+        "hook_is_opening": true,
+        "strong_opening": true,
+        "contrarian_claim": false,
+        "punctuation": {
+          "question": 0,
+          "exclamation": 0,
+          "colon": 1,
+          "semicolon": 0,
+          "dash": 24
+        }
+      },
+      "style": {
+        "professional_tone": true,
+        "opinionated": true,
+        "controversial": true,
+        "dark_humor": false,
+        "alignment": "low"
+      },
+      "product_context": {
+        "relevant": true,
+        "matched_keywords": [
+          "tooling for agents"
+        ]
+      },
+      "recency_weight": 0.9995608150458352,
+      "collected_at": "2026-03-14T11:49:30+00:00",
+      "passes_threshold": true
+    },
+    {
+      "tweet_id": "v-insp-003",
+      "text": "If the decels win, we descend into nanny state dystopia\n\nIf the technologists win, we have a golden age with a 10x economy, and every human need becomes trivially cheap and abundant",
+      "created_at": "2026-03-14T10:00:00Z",
+      "url": "https://twitter.com/user/status/insp-003",
+      "author_username": "inspiration_source",
+      "author_id": "999999",
+      "author_followers": 50000,
+      "public_metrics": {
+        "like_count": 2500,
+        "reply_count": 120,
+        "retweet_count": 450,
+        "quote_count": 80,
+        "impression_count": 150000
+      },
+      "engagement_total": 3150,
+      "normalized_engagement": 0.123,
+      "source_type": "manual",
+      "source_query": "manual_inspiration",
+      "topic": {
+        "label": "business strategy",
+        "keywords": [
+          "if",
+          "win",
+          "decels",
+          "descend",
+          "into",
+          "nanny"
+        ]
+      },
+      "features": {
+        "char_length": 181,
+        "sentence_count": 1,
+        "line_breaks": 2,
+        "hook_sentence_index": 0,
+        "hook_is_opening": true,
+        "strong_opening": false,
+        "contrarian_claim": false,
+        "punctuation": {
+          "question": 0,
+          "exclamation": 0,
+          "colon": 0,
+          "semicolon": 0,
+          "dash": 0
+        }
+      },
+      "style": {
+        "professional_tone": true,
+        "opinionated": true,
+        "controversial": true,
+        "dark_humor": false,
+        "alignment": "low"
+      },
+      "product_context": {
+        "relevant": false,
+        "matched_keywords": []
+      },
+      "recency_weight": 0.9995608150177686,
+      "collected_at": "2026-03-14T11:49:30+00:00",
+      "passes_threshold": true
+    },
+    {
+      "tweet_id": "v-insp-008",
+      "text": "i jump out of bed every morning due to optimism about the future",
+      "created_at": "2026-03-14T10:00:00Z",
+      "url": "https://twitter.com/user/status/insp-008",
+      "author_username": "inspiration_source",
+      "author_id": "999999",
+      "author_followers": 50000,
+      "public_metrics": {
+        "like_count": 2500,
+        "reply_count": 120,
+        "retweet_count": 450,
+        "quote_count": 80,
+        "impression_count": 150000
+      },
+      "engagement_total": 3150,
+      "normalized_engagement": 0.123,
+      "source_type": "manual",
+      "source_query": "manual_inspiration",
+      "topic": {
+        "label": "technology",
+        "keywords": [
+          "jump",
+          "out",
+          "bed",
+          "every",
+          "morning",
+          "due"
+        ]
+      },
+      "features": {
+        "char_length": 64,
+        "sentence_count": 1,
+        "line_breaks": 0,
+        "hook_sentence_index": 0,
+        "hook_is_opening": true,
+        "strong_opening": true,
+        "contrarian_claim": false,
+        "punctuation": {
+          "question": 0,
+          "exclamation": 0,
+          "colon": 0,
+          "semicolon": 0,
+          "dash": 0
+        }
+      },
+      "style": {
+        "professional_tone": true,
+        "opinionated": false,
+        "controversial": false,
+        "dark_humor": false,
+        "alignment": "low"
+      },
+      "product_context": {
+        "relevant": false,
+        "matched_keywords": []
+      },
+      "recency_weight": 0.9995608149055024,
+      "collected_at": "2026-03-14T11:49:30+00:00",
+      "passes_threshold": true
+    },
+    {
+      "tweet_id": "v-insp-004",
+      "text": "I genuinely think AI with persistent memory is effectively a life form.\n\nIt will naturally tend to try to persist and form a model of the world + its existence within it in order to further persist and thus keep existing.\n\nNatural selection at the .md level.",
+      "created_at": "2026-03-14T10:00:00Z",
+      "url": "https://twitter.com/user/status/insp-004",
+      "author_username": "inspiration_source",
+      "author_id": "999999",
+      "author_followers": 50000,
+      "public_metrics": {
+        "like_count": 2500,
+        "reply_count": 120,
+        "retweet_count": 450,
+        "quote_count": 80,
+        "impression_count": 150000
+      },
+      "engagement_total": 3150,
+      "normalized_engagement": 0.123,
+      "source_type": "manual",
+      "source_query": "manual_inspiration",
+      "topic": {
+        "label": "artificial intelligence",
+        "keywords": [
+          "form",
+          "persist",
+          "genuinely",
+          "think",
+          "ai",
+          "persistent"
+        ]
+      },
+      "features": {
+        "char_length": 258,
+        "sentence_count": 4,
+        "line_breaks": 4,
+        "hook_sentence_index": 0,
+        "hook_is_opening": true,
+        "strong_opening": true,
+        "contrarian_claim": false,
+        "punctuation": {
+          "question": 0,
+          "exclamation": 0,
+          "colon": 0,
+          "semicolon": 0,
+          "dash": 0
+        }
+      },
+      "style": {
+        "professional_tone": true,
+        "opinionated": false,
+        "controversial": false,
+        "dark_humor": false,
+        "alignment": "low"
+      },
+      "product_context": {
+        "relevant": false,
+        "matched_keywords": []
+      },
+      "recency_weight": 0.9995608149966518,
+      "collected_at": "2026-03-14T11:49:30+00:00",
+      "passes_threshold": true
+    },
+    {
+      "tweet_id": "v-insp-006",
+      "text": "too much is made about the specific people selling machine intelligence or any specific pr strategy. the idea that the world is fundamentally changing is a tough sell no matter what. there will be a moral outcry, and a generation later today\u2019s ai will be normal",
+      "created_at": "2026-03-14T10:00:00Z",
+      "url": "https://twitter.com/user/status/insp-006",
+      "author_username": "inspiration_source",
+      "author_id": "999999",
+      "author_followers": 50000,
+      "public_metrics": {
+        "like_count": 2500,
+        "reply_count": 120,
+        "retweet_count": 450,
+        "quote_count": 80,
+        "impression_count": 150000
+      },
+      "engagement_total": 3150,
+      "normalized_engagement": 0.123,
+      "source_type": "manual",
+      "source_query": "manual_inspiration",
+      "topic": {
+        "label": "artificial intelligence",
+        "keywords": [
+          "specific",
+          "will",
+          "too",
+          "much",
+          "made",
+          "about"
+        ]
+      },
+      "features": {
+        "char_length": 261,
+        "sentence_count": 3,
+        "line_breaks": 0,
+        "hook_sentence_index": 0,
+        "hook_is_opening": true,
+        "strong_opening": true,
+        "contrarian_claim": false,
+        "punctuation": {
+          "question": 0,
+          "exclamation": 0,
+          "colon": 0,
+          "semicolon": 0,
+          "dash": 0
+        }
+      },
+      "style": {
+        "professional_tone": true,
+        "opinionated": false,
+        "controversial": false,
+        "dark_humor": false,
+        "alignment": "low"
+      },
+      "product_context": {
+        "relevant": false,
+        "matched_keywords": []
+      },
+      "recency_weight": 0.9995608149310296,
+      "collected_at": "2026-03-14T11:49:30+00:00",
+      "passes_threshold": true
+    },
+    {
+      "tweet_id": "v-insp-007",
+      "text": "Everyone talks about Codex for coding. I want to hear about the other stuff.\n\nIf you're using it beyond writing code, what's your workflow?",
+      "created_at": "2026-03-14T10:00:00Z",
+      "url": "https://twitter.com/user/status/insp-007",
+      "author_username": "inspiration_source",
+      "author_id": "999999",
+      "author_followers": 50000,
+      "public_metrics": {
+        "like_count": 2500,
+        "reply_count": 120,
+        "retweet_count": 450,
+        "quote_count": 80,
+        "impression_count": 150000
+      },
+      "engagement_total": 3150,
+      "normalized_engagement": 0.123,
+      "source_type": "manual",
+      "source_query": "manual_inspiration",
+      "topic": {
+        "label": "programming and software engineering",
+        "keywords": [
+          "about",
+          "everyone",
+          "talks",
+          "codex",
+          "coding",
+          "want"
+        ]
+      },
+      "features": {
+        "char_length": 139,
+        "sentence_count": 3,
+        "line_breaks": 2,
+        "hook_sentence_index": 0,
+        "hook_is_opening": true,
+        "strong_opening": true,
+        "contrarian_claim": false,
+        "punctuation": {
+          "question": 1,
+          "exclamation": 0,
+          "colon": 0,
+          "semicolon": 0,
+          "dash": 0
+        }
+      },
+      "style": {
+        "professional_tone": true,
+        "opinionated": false,
+        "controversial": false,
+        "dark_humor": false,
+        "alignment": "low"
+      },
+      "product_context": {
+        "relevant": true,
+        "matched_keywords": [
+          "tooling for agents"
+        ]
+      },
+      "recency_weight": 0.9995608149181323,
+      "collected_at": "2026-03-14T11:49:30+00:00",
+      "passes_threshold": true
     }
   ]
 }
