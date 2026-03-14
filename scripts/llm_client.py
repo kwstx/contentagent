@@ -21,11 +21,12 @@ class LLMClient:
             payload["system"] = system_prompt
 
         try:
-            response = requests.post(self.base_url, json=payload, timeout=60)
+            print(f"  (Waiting for LLM response from {self.model}...)")
+            response = requests.post(self.base_url, json=payload, timeout=300)
             response.raise_for_status()
             return response.json().get("response", "")
         except requests.exceptions.Timeout:
-            print(f"Error: LLM call timed out after 60 seconds.")
+            print(f"Error: LLM call timed out after 300 seconds.")
             return None
         except Exception as e:
             print(f"Error calling LLM: {e}")

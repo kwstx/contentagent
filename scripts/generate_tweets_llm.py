@@ -23,7 +23,7 @@ def main():
     parser = argparse.ArgumentParser(description="Generate tweets using a local LLM.")
     parser.add_argument("--concepts", default="data/tweet_concepts.json")
     parser.add_argument("--topics", default="data/approved_topics.json")
-    parser.add_argument("--model", default="llama3")
+    parser.add_argument("--model", default="qwen2.5-coder:1.5b", help="Model to use (default: qwen2.5-coder:1.5b)")
     parser.add_argument("--limit", type=int, default=0, help="Limit number of concepts to process (0 for all)")
     args = parser.parse_args()
 
@@ -49,18 +49,17 @@ def main():
         print(f"[{i+1}/{len(to_process)}] Generating tweet for: {topic_desc[:50]}...")
         
         prompt = f"""
-        Generate a single tweet for the following concept:
-        Topic: {topic_desc}
-        Hook Type: {concept['hook_type']}
-        Core Insight: {concept['core_insight']}
-        Product Relevance: {concept['product_relevance']}
+        Generate a single tweet for the following concept. 
+        Follow the persona and style rules provided in the system prompt.
         
-        The tweet must consist of:
-        1. A Hook (Surprising/Contrarian)
-        2. An Argument/Insight
-        3. A Dark Twist/Cynical Closing
+        TOPIC: {topic_desc}
+        HOOK TYPE: {concept['hook_type']}
+        CORE INSIGHT: {concept['core_insight']}
+        PRODUCT RELEVANCE: {concept['product_relevance']}
         
-        Ensure it is between 180 and 260 characters. No hashtags. No emojis.
+        OUTPUT ONLY THE TWEET TEXT. 
+        No labels like 'Hook:', 'Argument:', 'Twist:'. 
+        No hashtags. No emojis. 180-260 characters.
         """
         
         tweet_text = client.generate(prompt, system_prompt=system_prompt)
