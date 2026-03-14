@@ -1,108 +1,57 @@
 {
   "dataset": "feedback_data",
-  "updated_at": "2026-03-13T19:13:54+00:00",
+  "updated_at": "2026-03-13T19:47:20+00:00",
   "entries": [
     {
-      "tweet_id": "o-0001",
-      "concept_id": "c-019",
-      "topic_id": "t-007",
-      "structural_template": "fallback_contrarian_v1",
-      "predicted_engagement_score": 91.26,
+      "tweet_id": "o-0048",
+      "concept_id": "c-008",
+      "topic_id": "t-003",
+      "structural_template": "fallback_curiosity_v1",
+      "predicted_engagement_score": 87.88,
       "actual_engagement_metrics": {
-        "impressions": 1189,
-        "likes": 16,
-        "retweets": 3,
+        "impressions": 1606,
+        "likes": 11,
+        "retweets": 2,
         "replies": 1,
-        "normalized_engagement": 1.82
+        "normalized_engagement": 1.2
       },
-      "product_mention": false,
-      "timestamp": "2026-03-13T19:13:54+00:00",
-      "text": "Most teams blame tools for startup hiring cycles and the layoff reflex, but the friction is coordination, not capability.\nFounders chase headcount optics, then burn rate chases them.\nThe postmortem will say \"process,\" which is how you know nobody fixed it."
+      "product_mention": true,
+      "timestamp": "2026-03-13T19:47:20+00:00",
+      "text": "The quiet part about coordination debt in multi-agent AI systems: the hard part is rarely technical.\nTeams ship clever agents, then wonder why they drift.\nEngram shows coordination is a system problem, not a culture deck. The meetings remain."
     },
     {
-      "tweet_id": "o-0011",
+      "tweet_id": "o-0010",
+      "concept_id": "c-034",
+      "topic_id": "t-012",
+      "structural_template": "fallback_contrarian_v1",
+      "predicted_engagement_score": 83.2,
+      "actual_engagement_metrics": {
+        "impressions": 921,
+        "likes": 24,
+        "retweets": 4,
+        "replies": 3,
+        "normalized_engagement": 3.34
+      },
+      "product_mention": false,
+      "timestamp": "2026-03-13T19:47:20+00:00",
+      "text": "Most teams blame tools for automation of coding with AI and its hidden costs, but the friction is coordination, not capability.\nSpeed hides design debt until incidents collect interest.\nThe retrofit will arrive right after the damage report."
+    },
+    {
+      "tweet_id": "o-0004",
       "concept_id": "c-022",
       "topic_id": "t-008",
       "structural_template": "fallback_contrarian_v1",
-      "predicted_engagement_score": 90.74,
+      "predicted_engagement_score": 83.03,
       "actual_engagement_metrics": {
-        "impressions": 1052,
-        "likes": 35,
-        "retweets": 5,
-        "replies": 3,
-        "normalized_engagement": 4.6
-      },
-      "product_mention": false,
-      "timestamp": "2026-03-13T19:13:54+00:00",
-      "text": "Most teams blame tools for contrarian takes on VC-driven startup advice, but the friction is coordination, not capability.\nFounders chase headcount optics, then burn rate chases them.\nThe postmortem will say \"process,\" which is how you know nobody fixed it."
-    },
-    {
-      "tweet_id": "o-0021",
-      "concept_id": "c-007",
-      "topic_id": "t-003",
-      "structural_template": "fallback_contrarian_v1",
-      "predicted_engagement_score": 88.72,
-      "actual_engagement_metrics": {
-        "impressions": 988,
-        "likes": 30,
-        "retweets": 5,
-        "replies": 2,
-        "normalized_engagement": 4.4
-      },
-      "product_mention": false,
-      "timestamp": "2026-03-13T19:13:54+00:00",
-      "text": "Most teams blame tools for coordination debt in multi-agent AI systems, but the friction is coordination, not capability.\nTeams ship clever agents, then wonder why they drift apart.\nThe postmortem will say \"process,\" which is how you know nobody fixed it."
-    },
-    {
-      "tweet_id": "o-0031",
-      "concept_id": "c-001",
-      "topic_id": "t-001",
-      "structural_template": "fallback_contrarian_v1",
-      "predicted_engagement_score": 87.56,
-      "actual_engagement_metrics": {
-        "impressions": 1703,
-        "likes": 21,
-        "retweets": 4,
+        "impressions": 962,
+        "likes": 15,
+        "retweets": 2,
         "replies": 1,
-        "normalized_engagement": 1.98
+        "normalized_engagement": 2.46
       },
       "product_mention": false,
-      "timestamp": "2026-03-13T19:13:54+00:00",
-      "text": "Most teams blame tools for misconceptions about AI capabilities vs operational reality, but the friction is coordination, not capability.\nInfrastructure refuses to match the slide deck.\nThe postmortem will say \"process,\" which is how you know nobody fixed it."
-    },
-    {
-      "tweet_id": "o-0041",
-      "concept_id": "c-043",
-      "topic_id": "t-015",
-      "structural_template": "fallback_contrarian_v1",
-      "predicted_engagement_score": 87.36,
-      "actual_engagement_metrics": {
-        "impressions": 1823,
-        "likes": 59,
-        "retweets": 10,
-        "replies": 10,
-        "normalized_engagement": 4.12
-      },
-      "product_mention": false,
-      "timestamp": "2026-03-13T19:13:54+00:00",
-      "text": "Most teams blame tools for agent communication platforms as missing infrastructure, but the friction is coordination, not capability.\nTeams ship clever agents, then wonder why they drift.\nThe postmortem will say \"process\" and nothing changes."
-    },
-    {
-      "tweet_id": "o-0051",
-      "concept_id": "c-004",
-      "topic_id": "t-002",
-      "structural_template": "fallback_contrarian_v1",
-      "predicted_engagement_score": 86.88,
-      "actual_engagement_metrics": {
-        "impressions": 1498,
-        "likes": 22,
-        "retweets": 4,
-        "replies": 3,
-        "normalized_engagement": 2.17
-      },
-      "product_mention": false,
-      "timestamp": "2026-03-13T19:13:54+00:00",
-      "text": "Most teams blame tools for bias and ethical blind spots in AI adoption, but the friction is coordination, not capability.\nInfrastructure refuses to match the slide deck.\nThe postmortem will say \"process,\" which is how you know nobody fixed it."
+      "timestamp": "2026-03-13T19:47:20+00:00",
+      "text": "Most teams blame tools for contrarian takes on VC-driven startup advice, but the friction is coordination, not capability.\nFounders chase headcount optics, then burn rate chases them.\nThe roadmap will promise fixes, and the calendar will disagree."
     }
   ]
 }

@@ -67,9 +67,19 @@ def main():
     feedback_entries = []
     recent_entries = []
     
+    from safety import check_safety, log_agent_action
+    
     print(f"Publishing {len(to_publish)} tweets...")
     
     for tweet in to_publish:
+        # Safety / Autonomy Guard check
+        is_safe, reason = check_safety(tweet["text"])
+        if not is_safe:
+            print(f"Skipping tweet {tweet['tweet_id']} - Safety Violation: {reason}")
+            continue
+
+        log_agent_action("publish_attempt", {"tweet_id": tweet["tweet_id"], "text": tweet["text"]})
+        
         metrics = simulate_metrics(
             tweet["predicted_engagement_score"], 
             tweet["product_mention"]

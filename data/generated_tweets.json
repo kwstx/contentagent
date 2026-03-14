@@ -1,6 +1,6 @@
 {
   "dataset": "generated_tweets",
-  "generated_at": "2026-03-13T15:19:12+00:00",
+  "generated_at": "2026-03-13T19:46:09+00:00",
   "source_dataset": {
     "path": "data/tweet_concepts.json",
     "concept_count": 48
@@ -11,7 +11,7 @@
       260
     ],
     "max_characters": 280,
-    "pattern_source": "fallback"
+    "pattern_source": "tweet_patterns.json"
   },
   "tweet_count": 240,
   "generated_tweets": [
